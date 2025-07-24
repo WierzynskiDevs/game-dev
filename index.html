@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura do Código</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🎮 Aventura do Código</h1>
+            <div class="level-indicator">Nível <span id="currentLevel">1</span> - Conceito: <span id="currentConcept">Comandos Básicos</span></div>
+        </div>
+        
+        <div class="game-content">
+            <div class="story-panel">
+                <div class="story-text" id="storyText">
+                    <strong>🌟 Bem-vindo à Aventura do Código!</strong><br><br>
+                    Você é um jovem programador que acabou de chegar ao Reino Digital. Sua missão é ajudar o herói 🤖 a atravessar diferentes desafios usando o poder da programação!<br><br>
+                    <strong>Primeiro Desafio:</strong> O herói precisa se mover para frente para encontrar a chave mágica. Use os comandos disponíveis para programar suas ações!
+                </div>
+                
+                <div class="character" id="character">🤖</div>
+                
+                <div class="concept-explanation" id="conceptExplanation">
+                    <h4>💡 Conceito: Comandos Básicos</h4>
+                    Na programação, damos instruções específicas para o computador executar. Cada comando faz uma ação diferente. Comece com comandos simples!
+                </div>
+                
+                <div class="result-panel" id="resultPanel">
+                    <div id="resultText"></div>
+                    <button class="next-btn" id="nextBtn" onclick="nextLevel()">Próximo Desafio →</button>
+                </div>
+            </div>
+            
+            <div class="code-panel">
+                <div class="available-commands">
+                    <h3>📝 Comandos Disponíveis:</h3>
+                    <button class="command-btn" onclick="addCommand('mover()')">mover()</button>
+                    <button class="command-btn" onclick="addCommand('pular()')">pular()</button>
+                    <button class="command-btn" onclick="addCommand('pegar()')">pegar()</button>
+                    <button class="command-btn" onclick="addCommand('esperar()')">esperar()</button>
+                </div>
+                
+                <div class="code-editor" id="codeEditor">
+                    <div class="code-line">
+                        <span class="line-number">1</span>
+                        <span style="color: #4CAF50;">// Seu código aqui:</span>
+                    </div>
+                    <div class="code-line" id="codeLine2">
+                        <span class="line-number">2</span>
+                        <span id="userCode" style="color: #FFD93D;"></span>
+                    </div>
+                </div>
+                
+                <button class="run-btn" id="runBtn" onclick="runCode()">⚡ EXECUTAR CÓDIGO</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
