@@ -106,8 +106,45 @@ function addCommand(command) {
 }
 
 function updateCodeDisplay() {
-    const userCodeElement = document.getElementById('userCode');
-    userCodeElement.innerHTML = userCommands.join('<br><span class="line-number">' + (userCommands.length + 2) + '</span>');
+    const codeEditor = document.getElementById('codeEditor');
+    
+    // Limpar editor mantendo apenas o comentário inicial
+    codeEditor.innerHTML = `
+        <div class="code-line">
+            <span class="line-number">1</span>
+            <span style="color: #4CAF50;">// Seu código aqui:</span>
+        </div>
+    `;
+    
+    // Adicionar comandos do usuário
+    userCommands.forEach((command, index) => {
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'code-line user-line';
+        lineDiv.innerHTML = `
+            <span class="line-number">${index + 2}</span>
+            <span style="color: #FFD93D;">${command}</span>
+            <button class="remove-line-btn" onclick="removeCommand(${index})" title="Remover esta linha">×</button>
+        `;
+        codeEditor.appendChild(lineDiv);
+    });
+}
+
+function clearCode() {
+    userCommands = [];
+    updateCodeDisplay();
+    document.getElementById('resultPanel').classList.remove('show');
+}
+
+function undoLastCommand() {
+    if (userCommands.length > 0) {
+        userCommands.pop();
+        updateCodeDisplay();
+    }
+}
+
+function removeCommand(index) {
+    userCommands.splice(index, 1);
+    updateCodeDisplay();
 }
 
 function runCode() {
@@ -247,6 +284,9 @@ function loadLevel() {
         btn.onclick = () => addCommand(command);
         commandsContainer.appendChild(btn);
     });
+    
+    // Limpar o código quando carregar novo nível
+    clearCode();
 }
 
 function resetCode() {

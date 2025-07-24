@@ -44,14 +44,15 @@
                     <button class="command-btn" onclick="addCommand('esperar()')">esperar()</button>
                 </div>
                 
+                <div class="code-controls">
+                    <button class="clear-btn" onclick="clearCode()">🗑️ Limpar Código</button>
+                    <button class="undo-btn" onclick="undoLastCommand()">↶ Desfazer</button>
+                </div>
+                
                 <div class="code-editor" id="codeEditor">
                     <div class="code-line">
                         <span class="line-number">1</span>
                         <span style="color: #4CAF50;">// Seu código aqui:</span>
-                    </div>
-                    <div class="code-line" id="codeLine2">
-                        <span class="line-number">2</span>
-                        <span id="userCode" style="color: #FFD93D;"></span>
                     </div>
                 </div>
                 
