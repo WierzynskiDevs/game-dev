@@ -9,54 +9,112 @@
 </head>
 <body>
     <div class="game-container">
-        <div class="game-header">
-            <h1>🎮 Aventura do Código</h1>
-            <div class="level-indicator">Nível <span id="currentLevel">1</span> - Conceito: <span id="currentConcept">Comandos Básicos</span></div>
+        <!-- TELA DE SELEÇÃO -->
+        <div id="selectionScreen">
+            <div class="game-header">
+                <h1>🎮 Aventura do Código</h1>
+                <div class="level-indicator">Escolha sua Trilha de Aprendizado</div>
+            </div>
+            
+            <div class="selection-screen">
+                <div class="selection-title">🚀 Que tipo de programação você quer dominar?</div>
+                
+                <div class="tracks-container">
+                    <div class="track-card javascript" onclick="selectTrack('javascript')">
+                        <div class="track-icon">🟨</div>
+                        <div class="track-title">JavaScript</div>
+                        <div class="track-description">
+                            Aprenda a linguagem que domina a web! Desde variáveis até manipulação de elementos da página.
+                        </div>
+                        <div class="track-concepts">
+                            <span class="concept-tag">Variáveis</span>
+                            <span class="concept-tag">Funções</span>
+                            <span class="concept-tag">DOM</span>
+                            <span class="concept-tag">Eventos</span>
+                            <span class="concept-tag">APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="track-card logic" onclick="selectTrack('logic')">
+                        <div class="track-icon">🧠</div>
+                        <div class="track-title">Lógica de Programação</div>
+                        <div class="track-description">
+                            Desenvolva o pensamento computacional! Algoritmos, estruturas de decisão e resolução de problemas.
+                        </div>
+                        <div class="track-concepts">
+                            <span class="concept-tag">Algoritmos</span>
+                            <span class="concept-tag">Loops</span>
+                            <span class="concept-tag">Condicionais</span>
+                            <span class="concept-tag">Lógica Booleana</span>
+                            <span class="concept-tag">Estruturas</span>
+                        </div>
+                    </div>
+
+                    <div class="track-card css" onclick="selectTrack('css')">
+                        <div class="track-icon">🎨</div>
+                        <div class="track-title">CSS & Design</div>
+                        <div class="track-description">
+                            Domine a arte do design web! Layouts, animações, responsividade e experiência visual.
+                        </div>
+                        <div class="track-concepts">
+                            <span class="concept-tag">Seletores</span>
+                            <span class="concept-tag">Flexbox</span>
+                            <span class="concept-tag">Grid</span>
+                            <span class="concept-tag">Animações</span>
+                            <span class="concept-tag">Responsivo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="game-content">
-            <div class="story-panel">
-                <div class="story-text" id="storyText">
-                    <strong>🌟 Bem-vindo à Aventura do Código!</strong><br><br>
-                    Você é um jovem programador que acabou de chegar ao Reino Digital. Sua missão é ajudar o herói 🤖 a atravessar diferentes desafios usando o poder da programação!<br><br>
-                    <strong>Primeiro Desafio:</strong> O herói precisa se mover para frente para encontrar a chave mágica. Use os comandos disponíveis para programar suas ações!
-                </div>
-                
-                <div class="character" id="character">🤖</div>
-                
-                <div class="concept-explanation" id="conceptExplanation">
-                    <h4>💡 Conceito: Comandos Básicos</h4>
-                    Na programação, damos instruções específicas para o computador executar. Cada comando faz uma ação diferente. Comece com comandos simples!
-                </div>
-                
-                <div class="result-panel" id="resultPanel">
-                    <div id="resultText"></div>
-                    <button class="next-btn" id="nextBtn" onclick="nextLevel()">Próximo Desafio →</button>
+
+        <!-- TELA DE JOGO -->
+        <div id="gameScreen" class="hidden">
+            <button class="back-btn" onclick="backToSelection()">← Voltar</button>
+            
+            <div class="game-header">
+                <h1 id="gameTitle">🎮 Aventura do Código</h1>
+                <div class="level-indicator">
+                    <span id="trackName">Trilha</span> - Nível <span id="currentLevel">1</span> - Conceito: <span id="currentConcept">Conceito</span>
                 </div>
             </div>
             
-            <div class="code-panel">
-                <div class="available-commands">
-                    <h3>📝 Comandos Disponíveis:</h3>
-                    <button class="command-btn" onclick="addCommand('mover()')">mover()</button>
-                    <button class="command-btn" onclick="addCommand('pular()')">pular()</button>
-                    <button class="command-btn" onclick="addCommand('pegar()')">pegar()</button>
-                    <button class="command-btn" onclick="addCommand('esperar()')">esperar()</button>
-                </div>
-                
-                <div class="code-controls">
-                    <button class="clear-btn" onclick="clearCode()">🗑️ Limpar Código</button>
-                    <button class="undo-btn" onclick="undoLastCommand()">↶ Desfazer</button>
-                </div>
-                
-                <div class="code-editor" id="codeEditor">
-                    <div class="code-line">
-                        <span class="line-number">1</span>
-                        <span style="color: #4CAF50;">// Seu código aqui:</span>
+            <div class="game-content">
+                <div class="story-panel">
+                    <div class="story-text" id="storyText">História aqui...</div>
+                    
+                    <div class="character" id="character">🤖</div>
+                    
+                    <div class="concept-explanation" id="conceptExplanation">
+                        <h4>💡 Conceito</h4>
+                        Explicação aqui...
+                    </div>
+                    
+                    <div class="result-panel" id="resultPanel">
+                        <div id="resultText"></div>
+                        <button class="next-btn" id="nextBtn" onclick="nextLevel()">Próximo Desafio →</button>
                     </div>
                 </div>
                 
-                <button class="run-btn" id="runBtn" onclick="runCode()">⚡ EXECUTAR CÓDIGO</button>
+                <div class="code-panel">
+                    <div class="available-commands" id="availableCommands">
+                        <h3>📝 Comandos Disponíveis:</h3>
+                    </div>
+                    
+                    <div class="code-controls">
+                        <button class="clear-btn" onclick="clearCode()">🗑️ Limpar Código</button>
+                        <button class="undo-btn" onclick="undoLastCommand()">↶ Desfazer</button>
+                    </div>
+                    
+                    <div class="code-editor" id="codeEditor">
+                        <div class="code-line">
+                            <span class="line-number">1</span>
+                            <span style="color: #4CAF50;">// Seu código aqui:</span>
+                        </div>
+                    </div>
+                    
+                    <button class="run-btn" id="runBtn" onclick="runCode()">⚡ EXECUTAR CÓDIGO</button>
+                </div>
             </div>
         </div>
     </div>

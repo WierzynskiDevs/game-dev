@@ -46,6 +46,118 @@ body {
     font-size: 0.9em;
 }
 
+/* TELA DE SELEÇÃO */
+.selection-screen {
+    padding: 40px;
+    text-align: center;
+}
+
+.selection-title {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.tracks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.track-card {
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    border-radius: 15px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.track-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.track-card:hover::before {
+    opacity: 1;
+}
+
+.track-card.javascript {
+    border-color: #f1c40f;
+    background: linear-gradient(135deg, #fff9c4, #f8f9fa);
+}
+
+.track-card.javascript:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(241, 196, 15, 0.3);
+}
+
+.track-card.logic {
+    border-color: #9b59b6;
+    background: linear-gradient(135deg, #f4e6ff, #f8f9fa);
+}
+
+.track-card.logic:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(155, 89, 182, 0.3);
+}
+
+.track-card.css {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, #ffe6e6, #f8f9fa);
+}
+
+.track-card.css:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(231, 76, 60, 0.3);
+}
+
+.track-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.track-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.track-description {
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.track-concepts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.concept-tag {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+/* TELA DE JOGO */
 .game-content {
     padding: 30px;
     display: flex;
@@ -106,6 +218,35 @@ body {
     margin-bottom: 20px;
 }
 
+.code-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.code-line:hover {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.code-line.user-line {
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 3px solid #FFD700;
+}
+
+.code-line.user-line:hover {
+    background: rgba(255, 215, 0, 0.2);
+}
+
+.line-number {
+    color: #718096;
+    margin-right: 15px;
+    min-width: 20px;
+}
+
 .command-btn {
     background: #4CAF50;
     color: white;
@@ -121,194 +262,72 @@ body {
     text-align: center;
 }
 
-.clear-btn, .undo-btn {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 3px;
-    font-size: 0.85em;
-    transition: all 0.2s;
-    font-weight: bold;
-}
-
-.clear-btn:hover {
-    background: #c0392b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-}
-
-.undo-btn {
-    background: #f39c12;
-}
-
-.undo-btn:hover {
-    background: #e67e22;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
-}
-
-.code-controls {
-    margin-bottom: 15px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.code-line {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 5px;
-    transition: background 0.2s;
-    position: relative;
-}
-
-.code-line:hover {
-    background: rgba(76, 175, 80, 0.1);
-}
-
-.code-line.user-line {
-    background: rgba(255, 215, 0, 0.1);
-    border-left: 3px solid #FFD700;
-}
-
-.code-line.user-line:hover {
-    background: rgba(255, 215, 0, 0.2);
-}
-
-.remove-line-btn {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 0.7em;
-    margin-left: 10px;
-    opacity: 0;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.code-line.user-line:hover .remove-line-btn {
-    opacity: 1;
-}
-
-.remove-line-btn:hover {
-    background: #c0392b;
-    transform: scale(1.1);
-}
-
-.line-number {
-    color: #718096;
-    margin-right: 15px;
-    min-width: 20px;
-}
-
-.clear-btn, .undo-btn {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 3px;
-    font-size: 0.85em;
-    transition: all 0.2s;
-    font-weight: bold;
-}
-
-.clear-btn:hover {
-    background: #c0392b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-}
-
-.undo-btn {
-    background: #f39c12;
-}
-
-.undo-btn:hover {
-    background: #e67e22;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
-}
-
-.code-controls {
-    margin-bottom: 15px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.code-line {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 5px;
-    transition: background 0.2s;
-    position: relative;
-}
-
-.code-line:hover {
-    background: rgba(76, 175, 80, 0.1);
-}
-
-.code-line.user-line {
-    background: rgba(255, 215, 0, 0.1);
-    border-left: 3px solid #FFD700;
-}
-
-.code-line.user-line:hover {
-    background: rgba(255, 215, 0, 0.2);
-}
-
-.remove-line-btn {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 0.7em;
-    margin-left: 10px;
-    opacity: 0;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.code-line.user-line:hover .remove-line-btn {
-    opacity: 1;
-}
-
-.remove-line-btn:hover {
-    background: #c0392b;
-    transform: scale(1.1);
-}
-
 .command-btn:hover {
     background: #45a049;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
 }
 
-.command-btn.active {
-    background: #FF6B6B;
+.clear-btn, .undo-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 3px;
+    font-size: 0.85em;
+    transition: all 0.2s;
+    font-weight: bold;
 }
 
-.available-commands {
-    margin-bottom: 20px;
+.clear-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.undo-btn {
+    background: #f39c12;
+}
+
+.undo-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+}
+
+.code-controls {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.remove-line-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.7em;
+    margin-left: 10px;
+    opacity: 0;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.code-line.user-line:hover .remove-line-btn {
+    opacity: 1;
+}
+
+.remove-line-btn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
 }
 
 .available-commands h3 {
@@ -402,6 +421,29 @@ body {
     font-size: 1.1em;
 }
 
+.back-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background: #5a6268;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
     .game-content {
         flex-direction: column;
@@ -410,5 +452,9 @@ body {
     
     .game-header h1 {
         font-size: 2em;
+    }
+
+    .tracks-container {
+        grid-template-columns: 1fr;
     }
 }
