@@ -10,29 +10,204 @@ const tracks = {
         icon: "🟨",
         character: "💻",
         levels: [
+            // NÍVEL 1 - VARIÁVEIS
             {
                 story: "🌟 Bem-vindo ao Reino do JavaScript!\n\nVocê é um desenvolvedor web em treinamento. Sua missão é dominar a linguagem que controla toda a web!\n\nPrimeiro Desafio: Crie sua primeira variável para armazenar o nome do herói. Use 'let' para declarar variáveis em JavaScript!",
                 concept: "Variáveis",
-                explanation: "VARIÁVEIS são 'caixas' que guardam dados! Em JavaScript, usamos 'let' para criar variáveis que podem mudar de valor. É como dar um nome para um valor que queremos usar depois.",
-                solution: ['let nomeHeroi = "Aventureiro"', 'console.log(nomeHeroi)'],
+                explanation: "VARIÁVEIS são 'caixas' que guardam dados! Em JavaScript, usamos 'let' para criar variáveis que podem mudar de valor, 'const' para valores fixos. É como dar um nome para um valor que queremos usar depois.",
+                solution: ['let nomeHeroi = "Aventureiro";', 'console.log(nomeHeroi);'],
                 success: "🎉 Perfeito! Você criou sua primeira variável em JavaScript!\n\nVariáveis são fundamentais - elas guardam informações que seu programa pode usar e modificar. O 'let' cria uma variável que pode ser alterada depois!",
-                commands: ['let nomeHeroi = "Aventureiro"', 'console.log(nomeHeroi)', 'let idade = 25', 'const PI = 3.14']
+                commands: ['let nomeHeroi = "Aventureiro";', 'console.log(nomeHeroi);', 'const PI = 3.14;', 'let idade = 25;', 'var antigo = "evite";']
             },
+    
+            // NÍVEL 2 - TIPOS DE DADOS
             {
-                story: "💻 Excelente! Agora você domina variáveis.\n\nSegundo Desafio: O herói precisa de uma função para calcular danos! Crie uma função chamada 'calcularDano' que recebe um parâmetro 'ataque' e retorna o valor multiplicado por 2.\n\nFunções são blocos de código reutilizáveis em JavaScript!",
-                concept: "Funções",
-                explanation: "FUNÇÕES são blocos de código que fazem tarefas específicas! Você define uma vez e pode usar muitas vezes. Em JavaScript, usamos 'function nome(parâmetros) { código }'.",
-                solution: ['function calcularDano(ataque) {', 'return ataque * 2', '}', 'console.log(calcularDano(10))'],
-                success: "⚡ Fantástico! Sua função está funcionando perfeitamente!\n\nFunções são o coração do JavaScript! Elas organizam o código, evitam repetição e tornam tudo mais limpo e reutilizável.",
-                commands: ['function calcularDano(ataque) {', 'return ataque * 2', '}', 'console.log(calcularDano(10))', 'let resultado =']
+                story: "📊 Excelente! Agora vamos conhecer os tipos de dados.\n\nSegundo Desafio: JavaScript trabalha com diferentes tipos! Crie uma variável com número 'let pontos = 100', uma com texto 'let status = \"ativo\"' e uma booleana 'let vivo = true'.",
+                concept: "Tipos de Dados",
+                explanation: "TIPOS DE DADOS definem que tipo de informação uma variável guarda! Numbers (números), Strings (texto), Booleans (verdadeiro/falso), Arrays (listas) e Objects (objetos). Cada tipo tem suas características!",
+                solution: ['let pontos = 100;', 'let status = "ativo";', 'let vivo = true;', 'console.log(typeof pontos);'],
+                success: "🔢 Fantástico! Você dominou os tipos básicos do JavaScript!\n\nEntender tipos de dados é crucial! Numbers para cálculos, Strings para texto, Booleans para lógica. JavaScript é dinâmico e flexível!",
+                commands: ['let pontos = 100;', 'let status = "ativo";', 'let vivo = true;', 'console.log(typeof pontos);', 'let lista = [];', 'let objeto = {};']
             },
+    
+            // NÍVEL 3 - FUNÇÕES BÁSICAS
             {
-                story: "🔥 Incrível! Suas funções estão poderosas.\n\nTerceiro Desafio: Agora vamos manipular o DOM! O herói precisa mudar o texto de um elemento HTML na página. Use 'document.getElementById()' para selecionar um elemento e '.textContent' para alterar seu texto.\n\nDOM é como JavaScript conversa com HTML!",
+                story: "💻 Incrível! Agora vamos criar funções.\n\nTerceiro Desafio: O herói precisa de uma função para calcular danos! Crie uma função chamada 'calcularDano' que recebe um parâmetro 'ataque' e retorna o valor multiplicado por 2.",
+                concept: "Funções Básicas",
+                explanation: "FUNÇÕES são blocos de código reutilizáveis! Você define uma vez e pode usar muitas vezes. Em JavaScript, usamos 'function nome(parâmetros) { código }'. Elas organizam e simplificam o código!",
+                solution: ['function calcularDano(ataque) {', 'return ataque * 2;', '}', 'console.log(calcularDano(10));'],
+                success: "⚡ Sensacional! Sua função está funcionando perfeitamente!\n\nFunções são o coração do JavaScript! Elas organizam o código, evitam repetição e tornam tudo mais limpo e reutilizável!",
+                commands: ['function calcularDano(ataque) {', 'return ataque * 2;', '}', 'console.log(calcularDano(10));', 'let resultado = calcularDano(5);']
+            },
+    
+            // NÍVEL 4 - CONDICIONAIS
+            {
+                story: "🤔 Perfeito! Vamos tomar decisões inteligentes.\n\nQuarto Desafio: O herói precisa verificar se tem energia suficiente! Use 'if (energia >= 50)' para verificar se energia é maior ou igual a 50, e exiba mensagens diferentes para cada caso.",
+                concept: "Condicionais (if/else)",
+                explanation: "CONDICIONAIS fazem programas tomarem decisões! 'if' verifica uma condição, 'else' define o que fazer se for falsa, 'else if' adiciona mais opções. É como dar inteligência ao código!",
+                solution: ['let energia = 75;', 'if (energia >= 50) {', 'console.log("Energia suficiente!");', '} else {', 'console.log("Energia baixa!");', '}'],
+                success: "🧠 Excelente! Seu programa agora toma decisões inteligentes!\n\nCondicionais são fundamentais na programação. Elas permitem que o código se adapte a diferentes situações automaticamente!",
+                commands: ['let energia = 75;', 'if (energia >= 50) {', 'console.log("Energia suficiente!");', '} else {', 'console.log("Energia baixa!");', '}', 'else if (energia > 25) {']
+            },
+    
+            // NÍVEL 5 - LOOPS
+            {
+                story: "🔄 Fantástico! Vamos automatizar tarefas repetitivas.\n\nQuinto Desafio: O herói precisa coletrar 5 moedas! Use um loop 'for' para contar de 1 até 5 e exibir 'Moeda coletada: X' para cada iteração.",
+                concept: "Loops (for)",
+                explanation: "LOOPS fazem o computador repetir tarefas automaticamente! 'for' é perfeito para repetições com contador, 'while' para condições. Em vez de escrever código repetido, use loops!",
+                solution: ['for (let i = 1; i <= 5; i++) {', 'console.log("Moeda coletada: " + i);', '}'],
+                success: "🪙 Incrível! Você automatizou a coleta de moedas!\n\nLoops são uma das ferramentas mais poderosas da programação. Eles fazem o computador trabalhar para você, executando tarefas repetitivas sem erros!",
+                commands: ['for (let i = 1; i <= 5; i++) {', 'console.log("Moeda coletada: " + i);', '}', 'let contador = 0;', 'while (contador < 3) {']
+            },
+    
+            // NÍVEL 6 - ARRAYS
+            {
+                story: "📋 Sensacional! Vamos organizar dados em listas.\n\nSexto Desafio: Crie um inventário do herói! Declare 'let inventario = [\"espada\", \"poção\", \"escudo\"]' e use 'inventario.push(\"moeda\")' para adicionar um item.",
+                concept: "Arrays (Listas)",
+                explanation: "ARRAYS são listas que guardam múltiplos valores! Você pode adicionar (push), remover (pop), acessar por posição [0] e muito mais. É como ter uma caixa organizada com vários compartimentos!",
+                solution: ['let inventario = ["espada", "poção", "escudo"];', 'inventario.push("moeda");', 'console.log(inventario);', 'console.log(inventario[0]);'],
+                success: "🎒 Perfeito! Você criou e manipulou seu primeiro array!\n\nArrays são essenciais para organizar dados. Agora você pode trabalhar com listas de qualquer tamanho de forma eficiente!",
+                commands: ['let inventario = ["espada", "poção", "escudo"];', 'inventario.push("moeda");', 'console.log(inventario);', 'console.log(inventario[0]);', 'inventario.pop();']
+            },
+    
+            // NÍVEL 7 - OBJETOS
+            {
+                story: "🏛️ Excelente! Vamos criar estruturas de dados complexas.\n\nSétimo Desafio: Crie um objeto para representar o herói! Use 'let heroi = { nome: \"Link\", vida: 100, nivel: 1 }' e acesse uma propriedade com 'heroi.nome'.",
+                concept: "Objetos",
+                explanation: "OBJETOS agrupam dados relacionados em propriedades! Como uma ficha de personagem: nome, vida, nível. Usamos chaves {} e acessamos com ponto (.) ou colchetes []. É organização avançada de dados!",
+                solution: ['let heroi = {', 'nome: "Link",', 'vida: 100,', 'nivel: 1', '};', 'console.log(heroi.nome);'],
+                success: "🦸‍♂️ Fantástico! Você criou seu primeiro objeto JavaScript!\n\nObjetos são fundamentais na programação moderna. Eles permitem modelar entidades do mundo real no código!",
+                commands: ['let heroi = {', 'nome: "Link",', 'vida: 100,', 'nivel: 1', '};', 'console.log(heroi.nome);', 'heroi.experiencia = 0;']
+            },
+    
+            // NÍVEL 8 - MÉTODOS DE OBJETOS
+            {
+                story: "⚔️ Incrível! Vamos adicionar comportamentos aos objetos.\n\nOitavo Desafio: Adicione um método ao herói! Crie 'atacar: function() { return this.nome + \" ataca!\"; }' dentro do objeto herói e chame com 'heroi.atacar()'.",
+                concept: "Métodos de Objetos",
+                explanation: "MÉTODOS são funções dentro de objetos! Eles definem o que o objeto pode fazer. 'this' se refere ao próprio objeto. É como dar superpoderes aos seus objetos!",
+                solution: ['let heroi = {', 'nome: "Link",', 'atacar: function() {', 'return this.nome + " ataca!";', '}', '};', 'console.log(heroi.atacar());'],
+                success: "⚡ Sensacional! Seu objeto agora tem comportamentos!\n\nMétodos transformam objetos passivos em entidades ativas. Agora seus objetos podem executar ações complexas!",
+                commands: ['let heroi = {', 'nome: "Link",', 'atacar: function() {', 'return this.nome + " ataca!";', '}', '};', 'console.log(heroi.atacar());']
+            },
+    
+            // NÍVEL 9 - DOM MANIPULATION
+            {
+                story: "🌐 Perfeito! Vamos controlar páginas web!\n\nNono Desafio: Manipule o DOM! Use 'let elemento = document.getElementById(\"heroi\")' para selecionar um elemento e 'elemento.textContent = \"Herói Poderoso!\"' para alterar seu texto.",
                 concept: "Manipulação do DOM",
-                explanation: "DOM (Document Object Model) é como JavaScript vê e modifica páginas web! Você pode selecionar elementos HTML e alterar seu conteúdo, estilo ou comportamento.",
-                solution: ['let elemento = document.getElementById("heroi")', 'elemento.textContent = "Herói Poderoso!"'],
-                success: "🌐 Sensacional! Você dominou a manipulação do DOM!\n\nIsso é JavaScript real! Agora você pode fazer páginas web interativas, alterando conteúdo, estilos e muito mais dinamicamente!",
-                commands: ['let elemento = document.getElementById("heroi")', 'elemento.textContent = "Herói Poderoso!"', 'elemento.style.color = "red"', 'document.querySelector(".classe")']
+                explanation: "DOM (Document Object Model) é como JavaScript vê e modifica páginas web! Você pode selecionar elementos, alterar conteúdo, estilos e estrutura. É a ponte entre JavaScript e HTML!",
+                solution: ['let elemento = document.getElementById("heroi");', 'elemento.textContent = "Herói Poderoso!";'],
+                success: "🎯 Incrível! Você dominou a manipulação do DOM!\n\nIsso é JavaScript real! Agora você pode fazer páginas web interativas, alterando conteúdo e estilos dinamicamente!",
+                commands: ['let elemento = document.getElementById("heroi");', 'elemento.textContent = "Herói Poderoso!";', 'elemento.style.color = "red";', 'document.querySelector(".classe");', 'elemento.classList.add("ativo");']
+            },
+    
+            // NÍVEL 10 - EVENTOS
+            {
+                story: "👆 Sensacional! Vamos reagir a interações do usuário.\n\nDécimo Desafio: Adicione interatividade! Use 'elemento.addEventListener(\"click\", function() { alert(\"Clicou!\"); })' para responder ao clique do usuário.",
+                concept: "Eventos",
+                explanation: "EVENTOS fazem páginas responderem ao usuário! Click, hover, scroll, teclado - tudo são eventos. addEventListener 'escuta' eventos e executa código quando eles acontecem!",
+                solution: ['let botao = document.getElementById("botao");', 'botao.addEventListener("click", function() {', 'alert("Botão clicado!");', '});'],
+                success: "🖱️ Fantástico! Sua página agora responde ao usuário!\n\nEventos são o que fazem a web interativa. Agora você pode criar experiências ricas e responsivas!",
+                commands: ['let botao = document.getElementById("botao");', 'botao.addEventListener("click", function() {', 'alert("Botão clicado!");', '});', 'addEventListener("keydown", function(e) {']
+            },
+    
+            // NÍVEL 11 - ARROW FUNCTIONS
+            {
+                story: "🏹 Excelente! Vamos modernizar nossas funções.\n\nDécimo Primeiro Desafio: Use arrow functions! Converta a função tradicional para arrow function: 'const somar = (a, b) => a + b' e teste com 'console.log(somar(5, 3))'.",
+                concept: "Arrow Functions",
+                explanation: "ARROW FUNCTIONS são uma forma moderna e concisa de escrever funções! Usam '=>' em vez de 'function'. São mais curtas e têm comportamento especial com 'this'. Sintaxe do JavaScript moderno!",
+                solution: ['const somar = (a, b) => a + b;', 'console.log(somar(5, 3));'],
+                success: "🎯 Perfeito! Você modernizou suas funções!\n\nArrow functions tornam o código mais limpo e são padrão no JavaScript moderno. Você está evoluindo como desenvolvedor!",
+                commands: ['const somar = (a, b) => a + b;', 'console.log(somar(5, 3));', 'const quadrado = x => x * x;', 'const listar = () => console.log("Lista");']
+            },
+    
+            // NÍVEL 12 - MÉTODOS DE ARRAY
+            {
+                story: "🔧 Incrível! Vamos dominar manipulação avançada de arrays.\n\nDécimo Segundo Desafio: Use métodos modernos! Com o array '[1, 2, 3, 4, 5]', use 'numeros.map(x => x * 2)' para dobrar todos os valores e 'filter(x => x > 6)' para filtrar os maiores que 6.",
+                concept: "Métodos de Array",
+                explanation: "MÉTODOS DE ARRAY são superpoderes para listas! map() transforma elementos, filter() filtra por condição, reduce() combina elementos. É programação funcional e muito poderosa!",
+                solution: ['let numeros = [1, 2, 3, 4, 5];', 'let dobrados = numeros.map(x => x * 2);', 'let filtrados = dobrados.filter(x => x > 6);', 'console.log(filtrados);'],
+                success: "🚀 Sensacional! Você dominou métodos modernos de array!\n\nEsses métodos são essenciais no JavaScript moderno. Agora você pode manipular dados de forma elegante e funcional!",
+                commands: ['let numeros = [1, 2, 3, 4, 5];', 'let dobrados = numeros.map(x => x * 2);', 'let filtrados = dobrados.filter(x => x > 6);', 'console.log(filtrados);', 'numeros.forEach(x => console.log(x));']
+            },
+    
+            // NÍVEL 13 - DESTRUCTURING
+            {
+                story: "📦 Fantástico! Vamos desempacotar dados de forma elegante.\n\nDécimo Terceiro Desafio: Use destructuring! Com 'let pessoa = {nome: \"Ana\", idade: 25}', extraia as propriedades usando 'let {nome, idade} = pessoa' e exiba no console.",
+                concept: "Destructuring",
+                explanation: "DESTRUCTURING extrai valores de objetos e arrays de forma elegante! Em vez de pessoa.nome, você pode usar {nome} = pessoa. É sintaxe moderna que torna o código mais limpo!",
+                solution: ['let pessoa = {nome: "Ana", idade: 25};', 'let {nome, idade} = pessoa;', 'console.log(nome, idade);'],
+                success: "✨ Perfeito! Você dominou destructuring!\n\nDestructuring é uma das funcionalidades mais elegantes do JavaScript moderno. Código mais limpo e legível!",
+                commands: ['let pessoa = {nome: "Ana", idade: 25};', 'let {nome, idade} = pessoa;', 'console.log(nome, idade);', 'let [a, b] = [1, 2];', 'let {nome: nomeCompleto} = pessoa;']
+            },
+    
+            // NÍVEL 14 - TEMPLATE LITERALS
+            {
+                story: "💬 Excelente! Vamos criar strings dinâmicas modernas.\n\nDécimo Quarto Desafio: Use template literals! Crie uma mensagem dinâmica com 'let nome = \"João\"' e 'let mensagem = `Olá, ${nome}! Você tem ${2 + 3} moedas.`'",
+                concept: "Template Literals",
+                explanation: "TEMPLATE LITERALS usam crases (`) e ${} para interpolar variáveis! Muito mais poderoso que concatenação com +. Permite múltiplas linhas e expressões complexas!",
+                solution: ['let nome = "João";', 'let moedas = 5;', 'let mensagem = `Olá, ${nome}! Você tem ${moedas} moedas.`;', 'console.log(mensagem);'],
+                success: "📝 Incrível! Você modernizou a criação de strings!\n\nTemplate literals são muito mais poderosos e legíveis que concatenação tradicional. JavaScript moderno em ação!",
+                commands: ['let nome = "João";', 'let moedas = 5;', 'let mensagem = `Olá, ${nome}! Você tem ${moedas} moedas.`;', 'console.log(mensagem);', 'let multiline = `Linha 1\nLinha 2`;']
+            },
+    
+            // NÍVEL 15 - PROMISES
+            {
+                story: "⏳ Sensacional! Vamos trabalhar com código assíncrono.\n\nDécimo Quinto Desafio: Crie uma Promise! Use 'new Promise((resolve, reject) => { setTimeout(() => resolve(\"Sucesso!\"), 1000); })' e consuma com '.then()'.",
+                concept: "Promises",
+                explanation: "PROMISES lidam com operações assíncronas! Como pedidos que levam tempo para completar. resolve() para sucesso, reject() para erro, .then() para quando completar. Essencial para APIs!",
+                solution: ['let promessa = new Promise((resolve, reject) => {', 'setTimeout(() => resolve("Missão completa!"), 1000);', '});', 'promessa.then(resultado => console.log(resultado));'],
+                success: "⚡ Fantástico! Você dominou programação assíncrona!\n\nPromises são fundamentais no JavaScript moderno. Agora você pode lidar com APIs, arquivos e operações que levam tempo!",
+                commands: ['let promessa = new Promise((resolve, reject) => {', 'setTimeout(() => resolve("Missão completa!"), 1000);', '});', 'promessa.then(resultado => console.log(resultado));', '.catch(erro => console.log(erro));']
+            },
+    
+            // NÍVEL 16 - ASYNC/AWAIT
+            {
+                story: "🚀 Perfeito! Vamos simplificar código assíncrono.\n\nDécimo Sexto Desafio: Use async/await! Crie 'async function buscarDados() { let resultado = await promessa; return resultado; }' e chame a função.",
+                concept: "Async/Await",
+                explanation: "ASYNC/AWAIT simplifica Promises! 'async' marca função assíncrona, 'await' espera Promise resolver. Código assíncrono que parece síncrono - muito mais legível!",
+                solution: ['async function buscarDados() {', 'let promessa = new Promise(resolve => setTimeout(() => resolve("Dados!"), 500));', 'let resultado = await promessa;', 'return resultado;', '}', 'buscarDados().then(dados => console.log(dados));'],
+                success: "⭐ Sensacional! Você simplificou código assíncrono!\n\nAsync/await é a forma mais moderna e limpa de lidar com operações assíncronas. Código mais legível e maintível!",
+                commands: ['async function buscarDados() {', 'let resultado = await promessa;', 'return resultado;', '}', 'buscarDados().then(dados => console.log(dados));', 'try { await operacao(); } catch(e) {}']
+            },
+    
+            // NÍVEL 17 - CLASSES
+            {
+                story: "🏗️ Incrível! Vamos criar classes para organizar código.\n\nDécimo Sétimo Desafio: Crie uma classe! 'class Heroi { constructor(nome) { this.nome = nome; } falar() { return `${this.nome} fala!`; } }' e instancie com 'new Heroi(\"Link\")'.",
+                concept: "Classes",
+                explanation: "CLASSES são moldes para criar objetos! constructor() inicializa, métodos definem comportamentos. É programação orientada a objetos - organização avançada de código!",
+                solution: ['class Heroi {', 'constructor(nome) {', 'this.nome = nome;', '}', 'falar() {', 'return `${this.nome} fala!`;', '}', '}', 'let heroi = new Heroi("Link");', 'console.log(heroi.falar());'],
+                success: "🏛️ Fantástico! Você criou sua primeira classe!\n\nClasses organizam código de forma profissional. Agora você pode criar estruturas complexas e reutilizáveis!",
+                commands: ['class Heroi {', 'constructor(nome) {', 'this.nome = nome;', '}', 'falar() {', 'return `${this.nome} fala!`;', '}', '}', 'let heroi = new Heroi("Link");', 'console.log(heroi.falar());']
+            },
+    
+            // NÍVEL 18 - MODULES
+            {
+                story: "📦 Excelente! Vamos modularizar o código.\n\nDécimo Oitavo Desafio: Use módulos! Crie 'export const saudar = nome => `Olá, ${nome}!`' e depois 'import { saudar } from \"./modulo.js\"' para usar em outro arquivo.",
+                concept: "Módulos ES6",
+                explanation: "MÓDULOS organizam código em arquivos separados! export expõe funções, import traz de outros arquivos. Código organizado, reutilizável e maintível. Padrão moderno!",
+                solution: ['// No arquivo utils.js', 'export const saudar = nome => `Olá, ${nome}!`;', 'export const somar = (a, b) => a + b;', '', '// No arquivo principal', 'import { saudar, somar } from "./utils.js";', 'console.log(saudar("Mundo"));'],
+                success: "🎯 Perfeito! Você modularizou seu código!\n\nMódulos são essenciais em projetos grandes. Código organizado, testável e reutilizável. Desenvolvimento profissional!",
+                commands: ['export const saudar = nome => `Olá, ${nome}!`;', 'export const somar = (a, b) => a + b;', 'import { saudar } from "./utils.js";', 'export default class Heroi {}', 'import Heroi from "./heroi.js";']
+            },
+    
+            // NÍVEL 19 - FETCH API
+            {
+                story: "🌐 Sensacional! Vamos conectar com APIs externas.\n\nDécimo Nono Desafio: Use Fetch API! Crie 'fetch(\"https://jsonplaceholder.typicode.com/posts/1\").then(response => response.json()).then(data => console.log(data))' para buscar dados de uma API.",
+                concept: "Fetch API",
+                explanation: "FETCH API permite comunicação com servidores! Busca dados de APIs, envia informações, trabalha com JSON. É como seu código conversar com o mundo exterior!",
+                solution: ['fetch("https://jsonplaceholder.typicode.com/posts/1")', '.then(response => response.json())', '.then(data => {', 'console.log("Título:", data.title);', 'console.log("Conteúdo:", data.body);', '})'], 
+                success: "🌍 Incrível! Você conectou seu código com o mundo exterior!\n\nFetch API é essencial para aplicações modernas. Agora você pode trabalhar com dados reais de qualquer lugar do mundo!",
+                commands: ['fetch("https://jsonplaceholder.typicode.com/posts/1")', '.then(response => response.json())', '.then(data => console.log(data))', 'console.log("Título:", data.title);', '.catch(error => console.log(error));']
+            },
+    
+            // NÍVEL 20 - PROJETO FINAL AVANÇADO
+            {
+                story: "🏆 DESAFIO FINAL ÉPICO!\n\nVocê chegou ao último nível! Crie uma aplicação completa que integre tudo: uma classe Gerenciador que use async/await para buscar dados, manipule o DOM, use eventos, template literals e módulos.\n\nMostre que você é um mestre do JavaScript moderno!",
+                concept: "Projeto Integrado Full-Stack",
+                explanation: "PROJETO FINAL integra todos os conceitos avançados! Classes, async/await, DOM manipulation, eventos, fetch API, template literals - tudo trabalhando em harmonia. É o teste definitivo do seu domínio JavaScript!",
+                solution: ['class AppManager {', 'constructor() {', 'this.dados = [];', 'this.initEvents();', '}', '', 'async fetchData() {', 'try {', 'const response = await fetch("https://jsonplaceholder.typicode.com/users");', 'this.dados = await response.json();', 'this.renderData();', '} catch (error) {', 'console.error("Erro:", error);', '}', '}', '', 'renderData() {', 'const container = document.getElementById("container");', 'container.innerHTML = this.dados.map(user => ', '`<div class="user-card">${user.name} - ${user.email}</div>`', ').join("");', '}', '', 'initEvents() {', 'document.getElementById("loadBtn").addEventListener("click", () => this.fetchData());', '}', '}', '', 'const app = new AppManager();'],
+                success: "🎉🏆 PARABÉNS, MESTRE DO JAVASCRIPT! 🏆🎉\n\nVocê completou todos os 20 níveis e se tornou um verdadeiro especialista em JavaScript! Dominou desde variáveis básicas até aplicações full-stack complexas.\n\nAgora você pode criar:\n• Aplicações web interativas\n• APIs e integrações\n• Código modular e maintível\n• Interfaces dinâmicas\n• Programação assíncrona avançada\n\nSeu conhecimento em JavaScript é agora de nível SÊNIOR! 🚀⭐✨",
+                commands: ['class AppManager {', 'constructor() {', 'this.dados = [];', '}', 'async fetchData() {', 'const response = await fetch(url);', 'this.dados = await response.json();', '}', 'renderData() {', 'container.innerHTML = template;', '}', 'initEvents() {', 'btn.addEventListener("click", handler);', '}', '}', 'const app = new AppManager();']
             }
         ]
     },
