@@ -216,29 +216,204 @@ const tracks = {
         icon: "🧠",
         character: "🤖",
         levels: [
+            // NÍVEL 1 - COMANDOS BÁSICOS
             {
-                story: "🧠 Bem-vindo ao Reino da Lógica!\n\nVocê é um jovem programador aprendendo a pensar como um computador. Sua missão é dominar os fundamentos do pensamento computacional!\n\nPrimeiro Desafio: O herói precisa se mover para frente. Use comandos básicos para programar suas ações!",
+                story: "🧠 Bem-vindo ao Reino da Lógica!\n\nVocê é um jovem programador aprendendo a pensar como um computador. Sua missão é dominar os fundamentos do pensamento computacional!\n\nPrimeiro Desafio: O robô precisa se mover para frente. Use o comando básico 'mover()' para fazer ele dar um passo!",
                 concept: "Comandos Básicos",
                 explanation: "ALGORITMOS começam com comandos simples! Cada instrução faz o computador executar uma ação específica. É como dar direções muito precisas para alguém que segue exatamente o que você fala.",
                 solution: ['mover()'],
                 success: "🎯 Perfeito! Você executou seu primeiro comando!\n\nProgramação é sobre dar instruções claras e precisas. Cada comando tem um propósito específico e o computador os executa na ordem exata!",
-                commands: ['mover()', 'pular()', 'pegar()', 'esperar()']
+                commands: ['mover()', 'pular()', 'pegar()', 'esperar()', 'virar_direita()']
             },
+    
+            // NÍVEL 2 - SEQUÊNCIA DE COMANDOS
             {
-                story: "⚡ Excelente! Agora vamos trabalhar com repetição.\n\nSegundo Desafio: O herói precisa coletrar 3 moedas em linha. Em vez de escrever 'mover(), pegar()' três vezes, use um LOOP! O comando 'repetir(3)' executará os comandos dentro dele 3 vezes automaticamente.\n\nLoops são fundamentais na programação!",
-                concept: "Loops (Repetição)",
-                explanation: "LOOPS fazem o computador repetir tarefas automaticamente! Em vez de escrever o mesmo código várias vezes, usamos loops. É como dizer: 'faça isso X vezes'.",
+                story: "🎯 Excelente! Agora vamos criar uma sequência de ações.\n\nSegundo Desafio: O robô precisa pegar uma moeda que está à frente! Execute a sequência: mover para frente, depois pegar a moeda. Use 'mover()' seguido de 'pegar()'.",
+                concept: "Sequência de Comandos",
+                explanation: "SEQUÊNCIA é a ordem dos comandos! O computador executa um comando por vez, na ordem exata que você escreve. Como uma receita: primeiro faça isso, depois aquilo.",
+                solution: ['mover()', 'pegar()'],
+                success: "🪙 Fantástico! Você criou sua primeira sequência lógica!\n\nSequência é um dos pilares da programação. A ordem dos comandos é fundamental - mude a ordem e o resultado muda!",
+                commands: ['mover()', 'pegar()', 'pular()', 'virar_direita()', 'virar_esquerda()']
+            },
+    
+            // NÍVEL 3 - REPETIÇÃO SIMPLES
+            {
+                story: "🔄 Incrível! Agora vamos automatizar tarefas repetitivas.\n\nTerceiro Desafio: Há 3 moedas em linha reta. Em vez de escrever 'mover(), pegar()' três vezes, use 'repetir(3)' para executar os comandos 3 vezes automaticamente!",
+                concept: "Repetição (Loops)",
+                explanation: "REPETIÇÃO evita escrever o mesmo código várias vezes! 'repetir(X)' executa os comandos dentro dele X vezes. É automação pura - deixe o computador fazer o trabalho pesado!",
                 solution: ['repetir(3)', 'mover()', 'pegar()', 'fim_repetir'],
-                success: "🔄 Incrível! Você automatizou uma tarefa repetitiva!\n\nLoops são uma das ferramentas mais poderosas da programação. Eles fazem o computador trabalhar para você, executando tarefas repetitivas sem erros!",
-                commands: ['repetir(3)', 'mover()', 'pegar()', 'fim_repetir', 'esperar()']
+                success: "⚡ Sensacional! Você automatizou uma tarefa repetitiva!\n\nLoops são uma das ferramentas mais poderosas da programação. Eles fazem o computador trabalhar para você, executando tarefas repetitivas sem erros!",
+                commands: ['repetir(3)', 'mover()', 'pegar()', 'fim_repetir', 'virar_direita()']
             },
+    
+            // NÍVEL 4 - CONDIÇÕES SIMPLES
             {
-                story: "🎲 Fantástico! Agora vamos tomar decisões inteligentes.\n\nTerceiro Desafio: Há duas portas! Use sensores para verificar qual é segura e tome uma decisão. Se a porta da direita for segura, entre por ela. Senão, vá pela esquerda.\n\nCondicionais fazem programas 'pensarem'!",
-                concept: "Condicionais (If/Else)",
-                explanation: "CONDICIONAIS permitem que programas tomem decisões! 'SE isso for verdade, ENTÃO faça aquilo, SENÃO faça outra coisa'. É como dar ao computador a capacidade de escolher!",
-                solution: ['verificar_portas()', 'se(porta_direita_segura)', 'entrar_direita()', 'senao', 'entrar_esquerda()', 'fim_se'],
-                success: "🧩 Extraordinário! Seu programa tomou uma decisão inteligente!\n\nCondicionais são o que fazem programas parecerem 'inteligentes'. Eles analisam situações e escolhem a melhor ação baseada nas condições!",
-                commands: ['verificar_portas()', 'se(porta_direita_segura)', 'senao', 'fim_se', 'entrar_direita()', 'entrar_esquerda()']
+                story: "🤔 Perfeito! Vamos tomar decisões inteligentes.\n\nQuarto Desafio: Há uma parede à frente! O robô precisa verificar se pode andar. Use 'se(caminho_livre)' para verificar se o caminho está livre antes de mover.",
+                concept: "Condições (If)",
+                explanation: "CONDIÇÕES fazem programas 'pensarem'! 'SE' uma condição for verdadeira, ENTÃO execute os comandos. É como dar ao computador a capacidade de analisar situações!",
+                solution: ['se(caminho_livre)', 'mover()', 'fim_se'],
+                success: "🧩 Excelente! Seu programa tomou uma decisão inteligente!\n\nCondições são o que fazem programas parecerem 'inteligentes'. Eles analisam situações e escolhem a melhor ação!",
+                commands: ['se(caminho_livre)', 'mover()', 'fim_se', 'se(tem_moeda)', 'pegar()']
+            },
+    
+            // NÍVEL 5 - IF/ELSE
+            {
+                story: "⚖️ Fantástico! Vamos criar alternativas.\n\nQuinto Desafio: Há duas portas - uma à direita e outra à esquerda. Se a porta direita estiver aberta, vá por ela. Senão, vá pela esquerda. Use 'se...senao'!",
+                concept: "Condições com Alternativa (If/Else)",
+                explanation: "IF/ELSE oferece duas opções! 'SE isso for verdade, ENTÃO faça aquilo, SENÃO faça outra coisa'. É como ter um plano A e um plano B sempre prontos!",
+                solution: ['se(porta_direita_aberta)', 'virar_direita()', 'mover()', 'senao', 'virar_esquerda()', 'mover()', 'fim_se'],
+                success: "🚪 Incrível! Seu programa sempre tem uma solução!\n\nIf/Else garante que seu programa sempre saiba o que fazer, independente da situação. Planejamento inteligente!",
+                commands: ['se(porta_direita_aberta)', 'virar_direita()', 'mover()', 'senao', 'virar_esquerda()', 'fim_se']
+            },
+    
+            // NÍVEL 6 - LOOPS COM CONDIÇÕES
+            {
+                story: "🔍 Sensacional! Vamos combinar repetição com decisões.\n\nSexto Desafio: Colete todas as moedas em um corredor! Use 'enquanto(tem_moeda)' para repetir 'pegar()' e 'mover()' até não haver mais moedas.",
+                concept: "Loops Condicionais (While)",
+                explanation: "WHILE repete ENQUANTO uma condição for verdadeira! Diferente do 'repetir(X)', aqui não sabemos quantas vezes vai repetir - depende da condição. É repetição inteligente!",
+                solution: ['enquanto(tem_moeda)', 'pegar()', 'mover()', 'fim_enquanto'],
+                success: "🎰 Perfeito! Você criou um loop adaptativo!\n\nWhile loops se adaptam à situação. Eles param automaticamente quando a condição muda. Automação verdadeiramente inteligente!",
+                commands: ['enquanto(tem_moeda)', 'pegar()', 'mover()', 'fim_enquanto', 'enquanto(caminho_livre)']
+            },
+    
+            // NÍVEL 7 - VARIÁVEIS
+            {
+                story: "📊 Excelente! Vamos começar a contar e memorizar.\n\nSétimo Desafio: O robô precisa contar quantas moedas coletou! Crie uma variável 'moedas = 0', depois use 'moedas = moedas + 1' cada vez que pegar uma moeda.",
+                concept: "Variáveis e Contadores",
+                explanation: "VARIÁVEIS são a 'memória' do programa! Elas guardam informações que podem mudar. Um contador é uma variável que aumenta de valor - como um placar que vai subindo!",
+                solution: ['moedas = 0', 'repetir(3)', 'pegar()', 'moedas = moedas + 1', 'mover()', 'fim_repetir', 'mostrar(moedas)'],
+                success: "🧮 Fantástico! Seu programa agora tem memória!\n\nVariáveis transformam programas simples em sistemas inteligentes. Agora você pode contar, calcular e lembrar informações!",
+                commands: ['moedas = 0', 'moedas = moedas + 1', 'mostrar(moedas)', 'repetir(3)', 'pegar()', 'mover()']
+            },
+    
+            // NÍVEL 8 - FUNÇÕES BÁSICAS
+            {
+                story: "🔧 Incrível! Vamos organizar código em blocos reutilizáveis.\n\nOitavo Desafio: Crie uma função para coletar moeda! Defina 'funcao coletarMoeda()' que executa 'mover()' e 'pegar()', depois use 'coletarMoeda()' três vezes.",
+                concept: "Funções Básicas",
+                explanation: "FUNÇÕES são blocos de código reutilizáveis! Como criar sua própria ferramenta personalizada. Defina uma vez, use quantas vezes quiser. Organização e reutilização!",
+                solution: ['funcao coletarMoeda()', 'mover()', 'pegar()', 'fim_funcao', 'repetir(3)', 'coletarMoeda()', 'fim_repetir'],
+                success: "⚙️ Sensacional! Você criou sua primeira ferramenta personalizada!\n\nFunções organizam código e evitam repetição. Agora você pode criar soluções modulares e elegantes!",
+                commands: ['funcao coletarMoeda()', 'mover()', 'pegar()', 'fim_funcao', 'coletarMoeda()', 'repetir(3)']
+            },
+    
+            // NÍVEL 9 - PARÂMETROS
+            {
+                story: "📝 Perfeito! Vamos tornar funções mais flexíveis.\n\nNono Desafio: Crie uma função que recebe parâmetros! Defina 'funcao moverX(passos)' que usa 'repetir(passos)' para mover uma quantidade variável de passos.",
+                concept: "Funções com Parâmetros",
+                explanation: "PARÂMETROS tornam funções flexíveis! Como variáveis que mudam cada vez que você chama a função. Uma função, múltiplas possibilidades. É customização inteligente!",
+                solution: ['funcao moverX(passos)', 'repetir(passos)', 'mover()', 'fim_repetir', 'fim_funcao', 'moverX(5)', 'moverX(2)'],
+                success: "🎛️ Incrível! Suas funções agora são personalizáveis!\n\nParâmetros transformam funções rígidas em ferramentas flexíveis. Uma função pode resolver múltiplos problemas similares!",
+                commands: ['funcao moverX(passos)', 'repetir(passos)', 'mover()', 'fim_funcao', 'moverX(5)', 'moverX(2)']
+            },
+    
+            // NÍVEL 10 - LÓGICA BOOLEANA
+            {
+                story: "🔍 Fantástico! Vamos trabalhar com lógica verdadeiro/falso.\n\nDécimo Desafio: Use operadores lógicos! Se 'tem_chave E porta_fechada', então use a chave. Use 'se(tem_chave E porta_fechada)' para combinar condições.",
+                concept: "Lógica Booleana (AND/OR)",
+                explanation: "LÓGICA BOOLEANA combina condições! 'E' (AND) - ambas devem ser verdade, 'OU' (OR) - pelo menos uma deve ser verdade. Como o cérebro humano analisa situações complexas!",
+                solution: ['se(tem_chave E porta_fechada)', 'usar_chave()', 'abrir_porta()', 'fim_se', 'mover()'],
+                success: "🧠 Extraordinário! Você dominou lógica complexa!\n\nLógica booleana permite análises sofisticadas. Agora seus programas podem tomar decisões baseadas em múltiplas condições!",
+                commands: ['se(tem_chave E porta_fechada)', 'usar_chave()', 'se(tem_moeda OU tem_gema)', 'abrir_porta()', 'fim_se']
+            },
+    
+            // NÍVEL 11 - CONDIÇÕES ANINHADAS
+            {
+                story: "🏗️ Excelente! Vamos criar decisões dentro de decisões.\n\nDécimo Primeiro Desafio: Navegue por um labirinto! Se o caminho da frente estiver livre, mova. Senão, se a direita estiver livre, vire à direita. Senão, vire à esquerda.",
+                concept: "Condições Aninhadas (Nested If)",
+                explanation: "CONDIÇÕES ANINHADAS são decisões dentro de decisões! Como um fluxograma complexo - se isso, então verifique aquilo, se não, verifique outra coisa. Lógica em camadas!",
+                solution: ['se(frente_livre)', 'mover()', 'senao', 'se(direita_livre)', 'virar_direita()', 'mover()', 'senao', 'virar_esquerda()', 'mover()', 'fim_se', 'fim_se'],
+                success: "🎯 Sensacional! Você criou um sistema de decisão em camadas!\n\nCondições aninhadas permitem lógica sofisticada. Seus programas agora podem navegar situações complexas!",
+                commands: ['se(frente_livre)', 'mover()', 'senao', 'se(direita_livre)', 'virar_direita()', 'virar_esquerda()', 'fim_se']
+            },
+    
+            // NÍVEL 12 - ARRAYS/LISTAS
+            {
+                story: "📋 Incrível! Vamos organizar múltiplos dados.\n\nDécimo Segundo Desafio: Crie um inventário! Use 'inventario = [\"chave\", \"moeda\", \"gema\"]' para criar uma lista, depois use 'adicionar(inventario, \"poção\")' para adicionar um item.",
+                concept: "Listas/Arrays",
+                explanation: "LISTAS guardam múltiplos valores organizados! Como uma mochila digital com compartimentos numerados. Você pode adicionar, remover e acessar itens por posição!",
+                solution: ['inventario = ["chave", "moeda", "gema"]', 'adicionar(inventario, "poção")', 'mostrar(inventario)', 'mostrar(inventario[0])'],
+                success: "🎒 Perfeito! Você organizou dados em uma coleção!\n\nListas são fundamentais para gerenciar múltiplos dados. Agora você pode trabalhar com coleções de informações!",
+                commands: ['inventario = ["chave", "moeda"]', 'adicionar(inventario, "poção")', 'mostrar(inventario)', 'mostrar(inventario[0])', 'remover(inventario, 0)']
+            },
+    
+            // NÍVEL 13 - LOOPS COM ARRAYS
+            {
+                story: "🔄 Fantástico! Vamos processar listas automaticamente.\n\nDécimo Terceiro Desafio: Examine cada item do inventário! Use 'para cada item em inventario' para percorrer a lista e mostrar cada item individualmente.",
+                concept: "Iteração em Listas",
+                explanation: "ITERAÇÃO percorre cada elemento de uma lista automaticamente! Como examinar cada gaveta de uma cômoda. 'Para cada' é perfeito para processar coleções completas!",
+                solution: ['inventario = ["espada", "escudo", "poção"]', 'para cada item em inventario', 'mostrar(item)', 'fim_para'],
+                success: "🔍 Incrível! Você automatizou o processamento de listas!\n\nIteração é essencial para trabalhar com coleções. Agora você pode processar qualquer quantidade de dados automaticamente!",
+                commands: ['inventario = ["espada", "escudo", "poção"]', 'para cada item em inventario', 'mostrar(item)', 'fim_para', 'contar(inventario)']
+            },
+    
+            // NÍVEL 14 - BUSCA EM LISTAS
+            {
+                story: "🔍 Sensacional! Vamos procurar itens específicos.\n\nDécimo Quarto Desafio: Verifique se você tem uma chave! Use 'se(contem(inventario, \"chave\"))' para verificar se um item específico está na lista antes de usá-lo.",
+                concept: "Busca e Verificação",
+                explanation: "BUSCA encontra elementos específicos em listas! Como procurar um livro específico numa biblioteca. Verificar antes de usar evita erros e torna programas mais robustos!",
+                solution: ['inventario = ["moeda", "chave", "gema"]', 'se(contem(inventario, "chave"))', 'mostrar("Tenho chave!")', 'usar_chave()', 'senao', 'mostrar("Preciso encontrar chave")', 'fim_se'],
+                success: "🗝️ Perfeito! Seu programa agora faz verificações inteligentes!\n\nBusca em listas é fundamental para programas robustos. Sempre verifique antes de usar - prevenção de erros!",
+                commands: ['inventario = ["moeda", "chave", "gema"]', 'se(contem(inventario, "chave"))', 'mostrar("Tenho chave!")', 'usar_chave()', 'senao', 'fim_se']
+            },
+    
+            // NÍVEL 15 - ALGORITMOS DE ORDENAÇÃO
+            {
+                story: "📊 Excelente! Vamos organizar dados em ordem.\n\nDécimo Quinto Desafio: Ordene uma lista de números! Use 'ordenar(numeros)' para organizar a lista '[5, 2, 8, 1, 9]' em ordem crescente.",
+                concept: "Ordenação",
+                explanation: "ORDENAÇÃO organiza dados em sequência lógica! Como organizar cartas por valor ou livros por ordem alfabética. Dados organizados são mais fáceis de processar e encontrar!",
+                solution: ['numeros = [5, 2, 8, 1, 9]', 'mostrar("Antes:", numeros)', 'ordenar(numeros)', 'mostrar("Depois:", numeros)'],
+                success: "📈 Fantástico! Você organizou dados perfeitamente!\n\nOrdenação é um algoritmo fundamental. Dados organizados permitem buscas mais rápidas e análises mais eficientes!",
+                commands: ['numeros = [5, 2, 8, 1, 9]', 'mostrar("Antes:", numeros)', 'ordenar(numeros)', 'mostrar("Depois:", numeros)', 'reverter(numeros)']
+            },
+    
+            // NÍVEL 16 - RECURSÃO BÁSICA
+            {
+                story: "🌀 Incrível! Vamos criar funções que chamam a si mesmas.\n\nDécimo Sexto Desafio: Conte regressivamente! Crie uma função 'contagem(n)' que mostra o número e chama 'contagem(n-1)' até chegar a zero.",
+                concept: "Recursão",
+                explanation: "RECURSÃO é quando uma função chama a si mesma! Como ecos que vão diminuindo ou bonecas russas dentro de bonecas. Poderosa para problemas que se dividem em versões menores!",
+                solution: ['funcao contagem(n)', 'se(n > 0)', 'mostrar(n)', 'contagem(n - 1)', 'senao', 'mostrar("Fim!")', 'fim_se', 'fim_funcao', 'contagem(5)'],
+                success: "🌀 Sensacional! Você dominou o conceito de recursão!\n\nRecursão é um conceito avançado e poderoso. Permite resolver problemas complexos dividindo-os em versões menores!",
+                commands: ['funcao contagem(n)', 'se(n > 0)', 'mostrar(n)', 'contagem(n - 1)', 'senao', 'mostrar("Fim!")', 'fim_funcao', 'contagem(5)']
+            },
+    
+            // NÍVEL 17 - ESTRUTURAS CONDICIONAIS COMPLEXAS
+            {
+                story: "🎯 Perfeito! Vamos criar sistemas de decisão avançados.\n\nDécimo Sétimo Desafio: Sistema de classificação! Use 'escolha(pontos)' com múltiplas opções: 'caso >= 90: \"Excelente\"', 'caso >= 70: \"Bom\"', 'caso padrão: \"Regular\"'.",
+                concept: "Switch/Case",
+                explanation: "SWITCH/CASE é uma forma elegante de lidar com múltiplas opções! Em vez de muitos if/else, você usa 'escolha' com vários 'caso'. Como um menu de opções organizadas!",
+                solution: ['pontos = 85', 'escolha(pontos)', 'caso >= 90:', 'mostrar("Excelente!")', 'caso >= 70:', 'mostrar("Bom!")', 'caso >= 50:', 'mostrar("Regular")', 'caso padrão:', 'mostrar("Precisa melhorar")', 'fim_escolha'],
+                success: "🏆 Incrível! Você criou um sistema de classificação elegante!\n\nSwitch/case torna código com múltiplas condições mais limpo e legível. Organização é fundamental!",
+                commands: ['pontos = 85', 'escolha(pontos)', 'caso >= 90:', 'mostrar("Excelente!")', 'caso >= 70:', 'caso padrão:', 'fim_escolha']
+            },
+    
+            // NÍVEL 18 - ALGORITMOS DE BUSCA
+            {
+                story: "🔍 Fantástico! Vamos implementar busca eficiente.\n\nDécimo Oitavo Desafio: Busca binária! Em uma lista ordenada '[1,3,5,7,9,11,13]', implemente busca que divide a lista pela metade a cada tentativa para encontrar o número 7.",
+                concept: "Busca Binária",
+                explanation: "BUSCA BINÁRIA é super eficiente em listas ordenadas! Em vez de verificar item por item, você divide pela metade e elimina metade das opções a cada tentativa. Como jogar 'maior ou menor'!",
+                solution: ['lista = [1,3,5,7,9,11,13]', 'alvo = 7', 'inicio = 0', 'fim = tamanho(lista) - 1', 'enquanto(inicio <= fim)', 'meio = (inicio + fim) / 2', 'se(lista[meio] == alvo)', 'mostrar("Encontrado na posição:", meio)', 'parar', 'senao_se(lista[meio] < alvo)', 'inicio = meio + 1', 'senao', 'fim = meio - 1', 'fim_se', 'fim_enquanto'],
+                success: "🎯 Extraordinário! Você implementou um algoritmo de busca eficiente!\n\nBusca binária é muito mais rápida que busca linear. Em 1 milhão de itens, encontra em no máximo 20 tentativas!",
+                commands: ['lista = [1,3,5,7,9,11,13]', 'alvo = 7', 'inicio = 0', 'fim = tamanho(lista) - 1', 'meio = (inicio + fim) / 2', 'se(lista[meio] == alvo)', 'parar', 'senao_se(lista[meio] < alvo)']
+            },
+    
+            // NÍVEL 19 - ESTRUTURAS DE DADOS AVANÇADAS
+            {
+                story: "🏗️ Sensacional! Vamos trabalhar com estruturas de dados complexas.\n\nDécimo Nono Desafio: Crie um sistema de filas! Implemente 'fila = nova_fila()', 'enfilar(fila, \"cliente1\")', 'desenfilar(fila)' para simular uma fila de atendimento.",
+                concept: "Filas e Pilhas",
+                explanation: "FILAS e PILHAS são estruturas especiais! Fila é 'primeiro a entrar, primeiro a sair' (como fila do banco). Pilha é 'último a entrar, primeiro a sair' (como pilha de pratos). Cada uma tem seu uso ideal!",
+                solution: ['fila = nova_fila()', 'enfilar(fila, "cliente1")', 'enfilar(fila, "cliente2")', 'enfilar(fila, "cliente3")', 'mostrar("Atendendo:", desenfilar(fila))', 'mostrar("Próximo:", frente(fila))', 'mostrar("Tamanho da fila:", tamanho(fila))'],
+                success: "🎪 Incrível! Você dominou estruturas de dados avançadas!\n\nFilas e pilhas são fundamentais em programação. Sistemas operacionais, navegadores e jogos usam essas estruturas constantemente!",
+                commands: ['fila = nova_fila()', 'enfilar(fila, "cliente1")', 'desenfilar(fila)', 'pilha = nova_pilha()', 'empilhar(pilha, "item")', 'desempilhar(pilha)', 'frente(fila)']
+            },
+    
+            // NÍVEL 20 - PROJETO FINAL ALGORÍTMICO
+            {
+                story: "🏆 DESAFIO FINAL ÉPICO!\n\nVocê chegou ao último nível! Crie um sistema completo de gerenciamento de tarefas que integre tudo: use listas para armazenar tarefas, funções para organizar código, loops para processar, condições para validar, e algoritmos de ordenação para priorizar.\n\nMostre que você é um mestre da lógica computacional!",
+                concept: "Sistema Algorítmico Completo",
+                explanation: "PROJETO FINAL integra todos os conceitos de lógica! Listas, funções, loops, condições, busca, ordenação, filas - tudo trabalhando em harmonia. É o teste definitivo do seu pensamento computacional!",
+                solution: ['// Sistema de Gerenciamento de Tarefas', 'tarefas = []', 'fila_prioridade = nova_fila()', '', 'funcao adicionarTarefa(nome, prioridade)', 'nova_tarefa = {nome: nome, prioridade: prioridade, concluida: falso}', 'adicionar(tarefas, nova_tarefa)', 'se(prioridade >= 8)', 'enfilar(fila_prioridade, nova_tarefa)', 'fim_se', 'fim_funcao', '', 'funcao processarTarefas()', 'ordenar_por(tarefas, "prioridade")', 'para cada tarefa em tarefas', 'se(NÃO tarefa.concluida)', 'mostrar("Executando:", tarefa.nome)', 'tarefa.concluida = verdadeiro', 'fim_se', 'fim_para', 'fim_funcao', '', 'funcao relatório()', 'concluidas = 0', 'para cada tarefa em tarefas', 'se(tarefa.concluida)', 'concluidas = concluidas + 1', 'fim_se', 'fim_para', 'mostrar("Tarefas concluídas:", concluidas, "de", tamanho(tarefas))', 'fim_funcao', '', '// Execução do sistema', 'adicionarTarefa("Estudar algoritmos", 9)', 'adicionarTarefa("Fazer compras", 5)', 'adicionarTarefa("Exercitar-se", 7)', 'processarTarefas()', 'relatório()'],
+                success: "🎉🏆 PARABÉNS, MESTRE DA LÓGICA! 🏆🎉\n\nVocê completou todos os 20 níveis e se tornou um verdadeiro especialista em Lógica de Programação! Dominou desde comandos básicos até algoritmos complexos.\n\nAgora você pode:\n• Resolver problemas complexos sistematicamente\n• Criar algoritmos eficientes\n• Estruturar dados de forma inteligente\n• Implementar busca e ordenação\n• Usar recursão e estruturas avançadas\n• Pensar como um computador!\n\nSeu pensamento computacional é agora de nível EXPERT! 🧠🚀✨",
+                commands: ['tarefas = []', 'funcao adicionarTarefa(nome, prioridade)', 'nova_tarefa = {nome: nome, prioridade: prioridade}', 'adicionar(tarefas, nova_tarefa)', 'fim_funcao', 'funcao processarTarefas()', 'ordenar_por(tarefas, "prioridade")', 'para cada tarefa em tarefas', 'mostrar("Executando:", tarefa.nome)', 'fim_para', 'funcao relatório()', 'concluidas = 0', 'se(tarefa.concluida)', 'concluidas = concluidas + 1', 'adicionarTarefa("Estudar", 9)', 'processarTarefas()']
             }
         ]
     },
