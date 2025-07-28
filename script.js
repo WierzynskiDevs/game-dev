@@ -622,6 +622,400 @@ const tracks = {
                 commands: [':root { --cor-card: #2c3e50; }', '.card {', '}', 'display: grid;', 'background: linear-gradient(135deg, var(--cor-card), #34495e);', 'border-radius: 15px;', 'box-shadow: 0 10px 30px rgba(0,0,0,0.3);', 'transition: all 0.5s ease;', 'transform-style: preserve-3d;', '.card:hover {', 'transform: perspective(1000px) rotateY(10deg) scale(1.05);', 'filter: brightness(1.1);']
             }
         ]
+    },
+    react: {
+        name: "React.js",
+        icon: "⚛️",
+        character: "⚛️",
+        levels: [
+            // NÍVEL 1 - Fundamentos
+            {
+                story: "⚛️ Bem-vindo ao Reino do React!\n\nVocê é um desenvolvedor front-end descobrindo o poder dos componentes! Sua missão é dominar a biblioteca que revolucionou o desenvolvimento web.\n\nPrimeiro Desafio: Crie seu primeiro componente funcional! Em React, componentes são como blocos de LEGO reutilizáveis.",
+                concept: "Componentes Funcionais",
+                explanation: "COMPONENTES são a base do React! Eles são funções JavaScript que retornam JSX (uma sintaxe que mistura HTML com JavaScript). Cada componente é um pedaço reutilizável da sua interface.",
+                solution: ['function MeuComponente() {', 'return <h1>Olá, React!</h1>', '}'],
+                success: "🎉 Incrível! Você criou seu primeiro componente React!\n\nComponentes são a essência do React. Eles permitem dividir sua interface em pedaços pequenos, reutilizáveis e organizados!",
+                commands: ['function MeuComponente() {', 'return <h1>Olá, React!</h1>', '}', 'export default MeuComponente', 'const App = () => {']
+            },
+            // NÍVEL 2 - JSX Básico
+            {
+                story: "🏗️ Excelente! Agora vamos explorar o JSX.\n\nSegundo Desafio: O herói precisa de uma estrutura mais complexa! Crie um componente que retorna um div contendo um título h2 e um parágrafo com texto.\n\nJSX permite escrever HTML dentro do JavaScript!",
+                concept: "JSX Estruturado",
+                explanation: "JSX é uma extensão do JavaScript que permite escrever HTML de forma mais intuitiva! Lembre-se: use className ao invés de class, e todos os elementos devem ter uma tag de fechamento.",
+                solution: ['return (', '<div>', '<h2>Título do Herói</h2>', '<p>Descrição do herói</p>', '</div>', ')'],
+                success: "🏗️ Perfeito! Você dominou a estrutura JSX!\n\nJSX torna o React muito mais legível e intuitivo. É como escrever HTML, mas com superpoderes do JavaScript!",
+                commands: ['return (', '<div>', '<h2>Título do Herói</h2>', '<p>Descrição do herói</p>', '</div>', ')']
+            },
+            // NÍVEL 3 - Props Básicas
+            {
+                story: "📦 Fantástico! Agora vamos tornar os componentes dinâmicos.\n\nTerceiro Desafio: Use props para personalizar o componente! Crie um componente que receba 'nome' como prop e exiba uma saudação personalizada.\n\nProps são como argumentos para componentes!",
+                concept: "Props (Propriedades)",
+                explanation: "PROPS são dados que você passa para um componente! Elas tornam os componentes reutilizáveis e dinâmicos. É como passar parâmetros para uma função.",
+                solution: ['function Saudacao(props) {', 'return <h1>Olá, {props.nome}!</h1>', '}'],
+                success: "📦 Sensacional! Seu componente agora é reutilizável!\n\nProps são fundamentais para criar componentes flexíveis. Um mesmo componente pode exibir dados diferentes dependendo das props recebidas!",
+                commands: ['function Saudacao(props) {', 'return <h1>Olá, {props.nome}!</h1>', '}', '{props.nome}', 'props.idade']
+            },
+            // NÍVEL 4 - useState Básico
+            {
+                story: "🔄 Incrível! Agora vamos adicionar interatividade.\n\nQuarto Desafio: Use o hook useState para criar um contador! O herói precisa de um botão que incrementa um número na tela.\n\nHooks dão superpoderes aos componentes funcionais!",
+                concept: "useState Hook",
+                explanation: "USESTATE é um hook que permite adicionar estado aos componentes funcionais! Estado é informação que pode mudar ao longo do tempo, como um contador, texto digitado, ou dados de uma API.",
+                solution: ['const [contador, setContador] = useState(0)', 'return (', '<button onClick={() => setContador(contador + 1)}>', 'Cliques: {contador}', '</button>', ')'],
+                success: "⚡ Fantástico! Seu componente agora tem estado e interatividade!\n\nO useState é fundamental no React moderno. Ele permite que seus componentes 'lembrem' de informações e reajam a mudanças!",
+                commands: ['const [contador, setContador] = useState(0)', 'return (', '<button onClick={() => setContador(contador + 1)}>', 'Cliques: {contador}', '</button>', ')']
+            },
+            // NÍVEL 5 - useState com String
+            {
+                story: "📝 Excelente! Vamos trabalhar com diferentes tipos de estado.\n\nQuinto Desafio: Crie um input controlado! Use useState para controlar o valor de um campo de texto que o usuário pode digitar.\n\nInputs controlados são a base de formulários em React!",
+                concept: "Input Controlado",
+                explanation: "INPUTS CONTROLADOS têm seu valor controlado pelo estado do React! Isso significa que o React controla totalmente o que aparece no campo, permitindo validação e manipulação em tempo real.",
+                solution: ['const [texto, setTexto] = useState("")', 'return (', '<input value={texto} onChange={(e) => setTexto(e.target.value)} />', '<p>Você digitou: {texto}</p>', ')'],
+                success: "📝 Perfeito! Você criou um input totalmente controlado!\n\nInputs controlados são essenciais para formulários robustos. Agora você pode validar, formatar e manipular dados em tempo real!",
+                commands: ['const [texto, setTexto] = useState("")', 'return (', '<input value={texto} onChange={(e) => setTexto(e.target.value)} />', '<p>Você digitou: {texto}</p>', ')']
+            },
+            // NÍVEL 6 - Renderização Condicional
+            {
+                story: "🔀 Incrível! Agora vamos tomar decisões na interface.\n\nSexto Desafio: Use renderização condicional! Crie um botão que alterna entre mostrar e esconder uma mensagem secreta.\n\nRenderização condicional torna interfaces dinâmicas!",
+                concept: "Renderização Condicional",
+                explanation: "RENDERIZAÇÃO CONDICIONAL permite mostrar diferentes elementos baseado em condições! Você pode usar operadores ternários ou && para controlar o que aparece na tela.",
+                solution: ['const [mostrar, setMostrar] = useState(false)', 'return (', '<button onClick={() => setMostrar(!mostrar)}>', '{mostrar ? "Esconder" : "Mostrar"}', '</button>', '{mostrar && <p>Mensagem secreta!</p>}', ')'],
+                success: "🔀 Sensacional! Sua interface agora reage a condições!\n\nRenderização condicional é essencial para criar interfaces responsivas que se adaptam ao estado da aplicação!",
+                commands: ['const [mostrar, setMostrar] = useState(false)', 'return (', '<button onClick={() => setMostrar(!mostrar)}>', '{mostrar ? "Esconder" : "Mostrar"}', '</button>', '{mostrar && <p>Mensagem secreta!</p>}', ')']
+            },
+            // NÍVEL 7 - Arrays e map()
+            {
+                story: "📋 Fantástico! Vamos trabalhar com listas de dados.\n\nSétimo Desafio: Renderize uma lista de heróis! Use um array de nomes e o método map() para criar uma lista de elementos na tela.\n\nListas são fundamentais em aplicações reais!",
+                concept: "Renderização de Listas",
+                explanation: "RENDERIZAÇÃO DE LISTAS usa o método map() para transformar arrays em elementos JSX! Cada item precisa de uma prop 'key' única para o React otimizar a renderização.",
+                solution: ['const herois = ["Superman", "Batman", "Wonder Woman"]', 'return (', '<ul>', '{herois.map(heroi => <li key={heroi}>{heroi}</li>)}', '</ul>', ')'],
+                success: "📋 Incrível! Você dominou a renderização de listas!\n\nListas são essenciais em qualquer aplicação. Agora você pode exibir dados dinâmicos de arrays, APIs e bancos de dados!",
+                commands: ['const herois = ["Superman", "Batman", "Wonder Woman"]', 'return (', '<ul>', '{herois.map(heroi => <li key={heroi}>{heroi}</li>)}', '</ul>', ')']
+            },
+            // NÍVEL 8 - useEffect Básico
+            {
+                story: "🎛️ Excelente! Agora vamos trabalhar com efeitos colaterais.\n\nOitavo Desafio: Use useEffect para executar código quando o componente for montado! Adicione um console.log que executa apenas uma vez.\n\nuseEffect controla o ciclo de vida dos componentes!",
+                concept: "useEffect Hook",
+                explanation: "USEEFFECT permite executar código em momentos específicos do ciclo de vida do componente! O array de dependências vazio [] faz o efeito executar apenas uma vez.",
+                solution: ['useEffect(() => {', 'console.log("Componente montado!")', '}, [])', 'return <h1>Olá useEffect!</h1>'],
+                success: "🎛️ Perfeito! Você entendeu o ciclo de vida dos componentes!\n\nuseEffect é essencial para chamadas de API, configuração de timers e limpeza de recursos!",
+                commands: ['useEffect(() => {', 'console.log("Componente montado!")', '}, [])', 'return <h1>Olá useEffect!</h1>']
+            },
+            // NÍVEL 9 - useEffect com Dependências
+            {
+                story: "🔗 Incrível! Vamos explorar dependências no useEffect.\n\nNono Desafio: Crie um useEffect que executa sempre que um contador mudar! O efeito deve logar o valor atual do contador.\n\nDependências controlam quando o efeito executa!",
+                concept: "useEffect com Dependências",
+                explanation: "DEPENDÊNCIAS no useEffect determinam quando ele deve executar novamente! Quando um valor no array de dependências muda, o efeito executa.",
+                solution: ['const [contador, setContador] = useState(0)', 'useEffect(() => {', 'console.log("Contador mudou:", contador)', '}, [contador])', 'return <button onClick={() => setContador(contador + 1)}>Count: {contador}</button>'],
+                success: "🔗 Sensacional! Você dominou as dependências do useEffect!\n\nAgora você pode sincronizar efeitos com mudanças específicas no estado!",
+                commands: ['const [contador, setContador] = useState(0)', 'useEffect(() => {', 'console.log("Contador mudou:", contador)', '}, [contador])', 'return <button onClick={() => setContador(contador + 1)}>Count: {contador}</button>']
+            },
+            // NÍVEL 10 - Eventos e Handlers
+            {
+                story: "🎯 Fantástico! Vamos aprofundar o tratamento de eventos.\n\nDécimo Desafio: Crie um formulário com handler de submit! O formulário deve prevenir o comportamento padrão e processar os dados.\n\nEventos são a ponte entre usuário e aplicação!",
+                concept: "Event Handlers",
+                explanation: "EVENT HANDLERS são funções que respondem a interações do usuário! preventDefault() impede o comportamento padrão do navegador, permitindo controle total sobre a ação.",
+                solution: ['const handleSubmit = (e) => {', 'e.preventDefault()', 'console.log("Formulário enviado!")', '}', 'return <form onSubmit={handleSubmit}><button type="submit">Enviar</button></form>'],
+                success: "🎯 Perfeito! Você dominou o tratamento de eventos!\n\nEvent handlers são essenciais para criar interações ricas e controladas em suas aplicações!",
+                commands: ['const handleSubmit = (e) => {', 'e.preventDefault()', 'console.log("Formulário enviado!")', '}', 'return <form onSubmit={handleSubmit}><button type="submit">Enviar</button></form>']
+            },
+            // NÍVEL 11 - Estado de Objeto
+            {
+                story: "🏗️ Excelente! Vamos trabalhar com estados mais complexos.\n\nDécimo Primeiro Desafio: Use useState com um objeto! Crie um estado que armazena nome e idade, e botões para atualizar cada propriedade.\n\nEstados complexos exigem cuidado especial!",
+                concept: "Estado de Objeto",
+                explanation: "ESTADOS DE OBJETO precisam ser atualizados de forma imutável! Use o spread operator (...) para criar um novo objeto mantendo as propriedades existentes.",
+                solution: ['const [pessoa, setPessoa] = useState({nome: "", idade: 0})', 'return (', '<input onChange={(e) => setPessoa({...pessoa, nome: e.target.value})} />', '<p>{pessoa.nome} tem {pessoa.idade} anos</p>', ')'],
+                success: "🏗️ Incrível! Você dominou estados complexos!\n\nTrabalhar com objetos no estado é fundamental para aplicações reais com múltiplas propriedades!",
+                commands: ['const [pessoa, setPessoa] = useState({nome: "", idade: 0})', 'return (', '<input onChange={(e) => setPessoa({...pessoa, nome: e.target.value})} />', '<p>{pessoa.nome} tem {pessoa.idade} anos</p>', ')']
+            },
+            // NÍVEL 12 - Componentes Filhos
+            {
+                story: "👨‍👩‍👧‍👦 Fantástico! Vamos criar hierarquias de componentes.\n\nDécimo Segundo Desafio: Crie um componente pai que renderiza componentes filhos! Passe dados do pai para os filhos via props.\n\nHierarquia de componentes organiza o código!",
+                concept: "Componentes Pai e Filho",
+                explanation: "HIERARQUIA DE COMPONENTES permite organizar a aplicação em árvores! Componentes pais podem passar dados para filhos através de props, criando fluxo unidirecional de dados.",
+                solution: ['function Filho({nome}) { return <p>Olá, {nome}!</p> }', 'function Pai() {', 'return <Filho nome="React" />', '}'],
+                success: "👨‍👩‍👧‍👦 Sensacional! Você criou uma hierarquia de componentes!\n\nEssa é a base da arquitetura React: componentes pequenos e focados trabalhando juntos!",
+                commands: ['function Filho({nome}) { return <p>Olá, {nome}!</p> }', 'function Pai() {', 'return <Filho nome="React" />', '}']
+            },
+            // NÍVEL 13 - Lifting State Up
+            {
+                story: "⬆️ Excelente! Vamos aprender a compartilhar estado.\n\nDécimo Terceiro Desafio: Implemente 'lifting state up'! Mova o estado para o componente pai e passe funções para os filhos modificarem esse estado.\n\nEstado compartilhado conecta componentes!",
+                concept: "Lifting State Up",
+                explanation: "LIFTING STATE UP significa mover o estado para um ancestral comum quando múltiplos componentes precisam dele! O pai mantém o estado e passa callbacks para os filhos.",
+                solution: ['function Pai() {', 'const [valor, setValor] = useState(0)', 'return <Filho valor={valor} onClick={() => setValor(valor + 1)} />', '}', 'function Filho({valor, onClick}) { return <button onClick={onClick}>{valor}</button> }'],
+                success: "⬆️ Perfeito! Você dominou o compartilhamento de estado!\n\nLifting state up é um padrão fundamental para comunicação entre componentes irmãos!",
+                commands: ['function Pai() {', 'const [valor, setValor] = useState(0)', 'return <Filho valor={valor} onClick={() => setValor(valor + 1)} />', '}', 'function Filho({valor, onClick}) { return <button onClick={onClick}>{valor}</button> }']
+            },
+            // NÍVEL 14 - useEffect com Cleanup
+            {
+                story: "🧹 Incrível! Vamos aprender limpeza de efeitos.\n\nDécimo Quarto Desafio: Use useEffect com função de limpeza! Crie um timer que incrementa um contador e limpe-o quando o componente for desmontado.\n\nLimpeza previne vazamentos de memória!",
+                concept: "Cleanup de useEffect",
+                explanation: "CLEANUP FUNCTION é retornada pelo useEffect para limpar recursos! É essencial para timers, listeners e subscriptions para evitar vazamentos de memória.",
+                solution: ['useEffect(() => {', 'const timer = setInterval(() => setContador(c => c + 1), 1000)', 'return () => clearInterval(timer)', '}, [])', 'return <p>Timer: {contador}</p>'],
+                success: "🧹 Sensacional! Você dominou a limpeza de efeitos!\n\nCleanup é crucial para aplicações performáticas e sem vazamentos de memória!",
+                commands: ['useEffect(() => {', 'const timer = setInterval(() => setContador(c => c + 1), 1000)', 'return () => clearInterval(timer)', '}, [])', 'return <p>Timer: {contador}</p>']
+            },
+            // NÍVEL 15 - Custom Hook Básico
+            {
+                story: "🔧 Fantástico! Vamos criar nossos próprios hooks.\n\nDécimo Quinto Desafio: Crie um custom hook useContador! Ele deve retornar o valor do contador e funções para incrementar e decrementar.\n\nCustom hooks reutilizam lógica!",
+                concept: "Custom Hooks",
+                explanation: "CUSTOM HOOKS são funções que reutilizam lógica stateful! Eles começam com 'use' e podem usar outros hooks internamente. São perfeitos para compartilhar lógica entre componentes.",
+                solution: ['function useContador() {', 'const [count, setCount] = useState(0)', 'return { count, increment: () => setCount(count + 1) }', '}', 'const { count, increment } = useContador()'],
+                success: "🔧 Incrível! Você criou seu primeiro custom hook!\n\nCustom hooks são uma das features mais poderosas do React para reutilização de lógica!",
+                commands: ['function useContador() {', 'const [count, setCount] = useState(0)', 'return { count, increment: () => setCount(count + 1) }', '}', 'const { count, increment } = useContador()']
+            },
+            // NÍVEL 16 - Refs com useRef
+            {
+                story: "🎯 Excelente! Vamos acessar elementos DOM diretamente.\n\nDécimo Sexto Desafio: Use useRef para focar um input! Crie um botão que, quando clicado, coloca o foco em um campo de texto.\n\nRefs acessam elementos DOM diretamente!",
+                concept: "useRef Hook",
+                explanation: "USEREF cria referências mutáveis que persistem durante o ciclo de vida do componente! É útil para acessar elementos DOM diretamente ou armazenar valores que não devem causar re-render.",
+                solution: ['const inputRef = useRef()', 'return (', '<input ref={inputRef} />', '<button onClick={() => inputRef.current.focus()}>Focar</button>', ')'],
+                success: "🎯 Perfeito! Você dominou referências com useRef!\n\nuseRef é essencial quando você precisa de acesso direto aos elementos DOM ou valores que não causam re-render!",
+                commands: ['const inputRef = useRef()', 'return (', '<input ref={inputRef} />', '<button onClick={() => inputRef.current.focus()}>Focar</button>', ')']
+            },
+            // NÍVEL 17 - Memo e Performance
+            {
+                story: "⚡ Incrível! Vamos otimizar performance.\n\nDécimo Sétimo Desafio: Use React.memo para otimizar um componente! Envolva um componente filho com memo para evitar re-renders desnecessários.\n\nMemo otimiza performance!",
+                concept: "React.memo",
+                explanation: "REACT.MEMO é um higher-order component que memoriza o resultado de um componente! Ele só re-renderiza se as props mudarem, otimizando performance em listas grandes.",
+                solution: ['const ComponenteOtimizado = React.memo(function Componente({nome}) {', 'return <p>Olá, {nome}!</p>', '})', 'return <ComponenteOtimizado nome="React" />'],
+                success: "⚡ Sensacional! Você otimizou a performance do componente!\n\nReact.memo é crucial para aplicações grandes onde performance é fundamental!",
+                commands: ['const ComponenteOtimizado = React.memo(function Componente({nome}) {', 'return <p>Olá, {nome}!</p>', '})', 'return <ComponenteOtimizado nome="React" />']
+            },
+            // NÍVEL 18 - Context API Básico
+            {
+                story: "🌐 Fantástico! Vamos compartilhar dados globalmente.\n\nDécimo Oitavo Desafio: Crie um Context para tema! Use createContext e Provider para compartilhar dados entre componentes sem prop drilling.\n\nContext compartilha dados globalmente!",
+                concept: "Context API",
+                explanation: "CONTEXT API permite compartilhar dados entre componentes sem passar props através de vários níveis! É ideal para temas, autenticação e outras configurações globais.",
+                solution: ['const TemaContext = createContext()', 'return (', '<TemaContext.Provider value="dark">', '<ComponenteFilho />', '</TemaContext.Provider>', ')'],
+                success: "🌐 Incrível! Você dominou o Context API!\n\nContext é essencial para gerenciar estado global sem bibliotecas externas!",
+                commands: ['const TemaContext = createContext()', 'return (', '<TemaContext.Provider value="dark">', '<ComponenteFilho />', '</TemaContext.Provider>', ')']
+            },
+            // NÍVEL 19 - useContext Hook
+            {
+                story: "🔌 Excelente! Vamos consumir dados do Context.\n\nDécimo Nono Desafio: Use useContext para consumir dados! Acesse o valor do TemaContext dentro de um componente filho.\n\nuseContext simplifica o consumo de dados!",
+                concept: "useContext Hook",
+                explanation: "USECONTEXT é um hook que consome dados de um Context! É mais simples que usar Consumer e permite acesso direto aos valores compartilhados.",
+                solution: ['function ComponenteFilho() {', 'const tema = useContext(TemaContext)', 'return <p>Tema atual: {tema}</p>', '}'],
+                success: "🔌 Perfeito! Você conectou o componente ao Context!\n\nuseContext torna o consumo de dados globais muito mais simples e legível!",
+                commands: ['function ComponenteFilho() {', 'const tema = useContext(TemaContext)', 'return <p>Tema atual: {tema}</p>', '}']
+            },
+            // NÍVEL 20 - Aplicação Completa
+            {
+                story: "🚀 Final Boss! Vamos criar uma aplicação completa!\n\nÚltimo Desafio: Combine tudo que aprendeu! Crie uma aplicação de lista de tarefas com useState, useEffect, componentes, props e eventos.\n\nEste é o teste final do mestre React!",
+                concept: "Aplicação Completa",
+                explanation: "APLICAÇÃO COMPLETA combina todos os conceitos React! useState para estado, useEffect para persistência, componentes para organização, props para comunicação e eventos para interatividade.",
+                solution: ['function TodoApp() {', 'const [todos, setTodos] = useState([])', 'const addTodo = (text) => setTodos([...todos, {id: Date.now(), text}])', 'return <div><TodoInput onAdd={addTodo} /><TodoList todos={todos} /></div>', '}'],
+                success: "🏆 PARABÉNS, MESTRE DO REACT! Você completou todos os desafios!\n\nVocê agora domina os fundamentos do React e está pronto para criar aplicações incríveis! Continue praticando e explorando o ecossistema React!",
+                commands: ['function TodoApp() {', 'const [todos, setTodos] = useState([])', 'const addTodo = (text) => setTodos([...todos, {id: Date.now(), text}])', 'return <div><TodoInput onAdd={addTodo} /><TodoList todos={todos} /></div>', '}']
+            }
+        ]
+    },
+    
+    bootstrap: {
+        name: "Bootstrap",
+        icon: "🅱️",
+        character: "📱",
+        levels: [
+            // NÍVEL 1 - CONTAINERS
+            {
+                story: "🅱️ Bem-vindo ao Reino do Bootstrap!\n\nVocê é um designer que quer criar layouts incríveis rapidamente! Sua missão é dominar o framework CSS mais popular do mundo.\n\nPrimeiro Desafio: Crie um container responsivo! Use a classe 'container' do Bootstrap para criar um layout que se adapta automaticamente a diferentes tamanhos de tela.",
+                concept: "Containers",
+                explanation: "CONTAINERS são a base do sistema de layout do Bootstrap! 'container' cria um layout de largura fixa responsivo, enquanto 'container-fluid' ocupa 100% da largura. É como uma caixa mágica que organiza tudo perfeitamente!",
+                solution: ['<div class="container">', '<h1>Meu Site Responsivo</h1>', '</div>'],
+                success: "📱 Perfeito! Você criou seu primeiro layout responsivo!\n\nO sistema de containers do Bootstrap é a fundação para layouts profissionais. Agora seu conteúdo se adapta automaticamente a qualquer tela!",
+                commands: ['<div class="container">', '<h1>Meu Site Responsivo</h1>', '</div>', '<div class="container-fluid">', 'class="row"']
+            },
+    
+            // NÍVEL 2 - GRID SYSTEM BÁSICO
+            {
+                story: "📊 Excelente! Agora vamos organizar o conteúdo em colunas.\n\nSegundo Desafio: Use o sistema de grid 12 colunas! Crie uma linha com 'row' e duas colunas: uma ocupando 8 espaços e outra ocupando 4 espaços. Use 'col-md-8' e 'col-md-4'.\n\nO grid system é a magia do Bootstrap!",
+                concept: "Grid System Básico",
+                explanation: "GRID SYSTEM divide a tela em 12 colunas imaginárias! Você pode combinar essas colunas como quiser. 'col-md-8' significa: em telas médias, ocupe 8 das 12 colunas disponíveis.",
+                solution: ['<div class="row">', '<div class="col-md-8">Conteúdo Principal</div>', '<div class="col-md-4">Sidebar</div>', '</div>'],
+                success: "🏗️ Incrível! Você dominou o sistema de grid!\n\nO grid system do Bootstrap é usado pelos maiores sites do mundo. Agora você pode criar layouts complexos e responsivos em minutos!",
+                commands: ['<div class="row">', '<div class="col-md-8">Conteúdo Principal</div>', '<div class="col-md-4">Sidebar</div>', '</div>', 'col-sm-6', 'col-lg-3']
+            },
+    
+            // NÍVEL 3 - BREAKPOINTS RESPONSIVOS
+            {
+                story: "📱 Fantástico! Agora vamos dominar diferentes tamanhos de tela.\n\nTerceiro Desafio: Crie um layout que se adapta a diferentes dispositivos! Use 'col-12 col-md-6 col-lg-4' para que a coluna ocupe: 12 espaços no mobile, 6 no tablet e 4 no desktop.\n\nResponsividade é o poder do Bootstrap!",
+                concept: "Breakpoints Responsivos",
+                explanation: "BREAKPOINTS definem como o layout se comporta em diferentes tamanhos! xs (extra small), sm (small), md (medium), lg (large), xl (extra large) - cada um adapta sua interface perfeitamente!",
+                solution: ['<div class="row">', '<div class="col-12 col-md-6 col-lg-4">Item 1</div>', '<div class="col-12 col-md-6 col-lg-4">Item 2</div>', '</div>'],
+                success: "🌟 Sensacional! Seu layout agora é totalmente responsivo!\n\nVocê dominou os breakpoints! Seu design agora funciona perfeitamente em celulares, tablets e desktops!",
+                commands: ['<div class="row">', '<div class="col-12 col-md-6 col-lg-4">Item 1</div>', '<div class="col-12 col-md-6 col-lg-4">Item 2</div>', '</div>', 'col-sm-12', 'col-xl-3']
+            },
+    
+            // NÍVEL 4 - BOTÕES
+            {
+                story: "🎨 Incrível! Agora vamos criar botões estilosos.\n\nQuarto Desafio: Crie botões com diferentes estilos! Use 'btn btn-primary' para um botão principal e 'btn btn-success' para um botão de sucesso.\n\nBootstrap tem botões lindos prontos para usar!",
+                concept: "Botões Bootstrap",
+                explanation: "BOTÕES no Bootstrap vêm com estilos prontos incríveis! 'btn' é a classe base, depois você adiciona cores: primary (azul), success (verde), danger (vermelho), warning (amarelo), info (ciano), dark (preto).",
+                solution: ['<button class="btn btn-primary">Clique Aqui</button>', '<button class="btn btn-success">Sucesso!</button>'],
+                success: "✨ Perfeito! Seus botões ficaram profissionais!\n\nOs botões do Bootstrap são usados por milhões de sites. Agora você pode criar interfaces bonitas sem escrever CSS customizado!",
+                commands: ['<button class="btn btn-primary">Clique Aqui</button>', '<button class="btn btn-success">Sucesso!</button>', 'btn-danger', 'btn-warning', 'btn-lg', 'btn-sm']
+            },
+    
+            // NÍVEL 5 - CARDS
+            {
+                story: "🃏 Excelente! Vamos criar cartões elegantes.\n\nQuinto Desafio: Crie um card completo! Use 'card' como container, 'card-header' para o cabeçalho, 'card-body' para o conteúdo e 'card-title' para o título.\n\nCards organizam informações de forma elegante!",
+                concept: "Cards",
+                explanation: "CARDS são containers flexíveis para exibir conteúdo! Eles podem ter header, body, footer, imagens e são perfeitos para criar layouts organizados. É como ter cartões de apresentação digitais!",
+                solution: ['<div class="card">', '<div class="card-header">Cabeçalho</div>', '<div class="card-body">', '<h5 class="card-title">Título do Card</h5>', '</div>', '</div>'],
+                success: "🎯 Sensacional! Você criou um card profissional!\n\nCards são um dos componentes mais versáteis do Bootstrap. Agora você pode organizar qualquer tipo de conteúdo de forma elegante!",
+                commands: ['<div class="card">', '<div class="card-header">Cabeçalho</div>', '<div class="card-body">', '<h5 class="card-title">Título do Card</h5>', '</div>', '</div>']
+            },
+    
+            // NÍVEL 6 - NAVBAR
+            {
+                story: "🧭 Fantástico! Agora vamos criar uma barra de navegação.\n\nSexto Desafio: Crie uma navbar responsiva! Use 'navbar navbar-expand-lg navbar-dark bg-dark' para criar uma barra de navegação escura que se expande em telas grandes.\n\nNavigation é essencial em qualquer site!",
+                concept: "Navbar",
+                explanation: "NAVBAR é o sistema de navegação do Bootstrap! Ela se adapta automaticamente a diferentes telas, pode ter logo, links, botões e até formulários. É a central de comando do seu site!",
+                solution: ['<nav class="navbar navbar-expand-lg navbar-dark bg-dark">', '<a class="navbar-brand" href="#">Meu Site</a>', '</nav>'],
+                success: "🚀 Incrível! Você criou uma navegação profissional!\n\nA navbar do Bootstrap é usada pelos maiores sites do mundo. Agora seus usuários podem navegar facilmente por todo o conteúdo!",
+                commands: ['<nav class="navbar navbar-expand-lg navbar-dark bg-dark">', '<a class="navbar-brand" href="#">Meu Site</a>', '</nav>', 'navbar-light', 'bg-primary', 'navbar-nav']
+            },
+    
+            // NÍVEL 7 - FORMULÁRIOS
+            {
+                story: "📝 Excelente! Vamos criar formulários bonitos.\n\nSétimo Desafio: Crie um campo de formulário estilizado! Use 'form-group' para agrupar, 'form-label' para o rótulo e 'form-control' para o input.\n\nFormulários são a ponte entre usuário e aplicação!",
+                concept: "Formulários",
+                explanation: "FORMULÁRIOS no Bootstrap são elegantes e funcionais! 'form-control' estiliza inputs, 'form-group' organiza campos, e tudo fica responsivo automaticamente. É como ter um designer de UX trabalhando para você!",
+                solution: ['<div class="form-group">', '<label class="form-label">Nome:</label>', '<input type="text" class="form-control">', '</div>'],
+                success: "📋 Perfeito! Seu formulário ficou profissional!\n\nFormulários bem estilizados melhoram muito a experiência do usuário. Agora você pode coletar dados de forma elegante!",
+                commands: ['<div class="form-group">', '<label class="form-label">Nome:</label>', '<input type="text" class="form-control">', '</div>', 'form-select', 'form-check']
+            },
+    
+            // NÍVEL 8 - ALINHAMENTO E SPACING
+            {
+                story: "📐 Incrível! Vamos dominar espaçamento e alinhamento.\n\nOitavo Desafio: Use classes utilitárias para alinhar! Use 'text-center' para centralizar texto, 'mt-4' para margem superior e 'p-3' para padding.\n\nEspaçamento correto faz toda a diferença!",
+                concept: "Spacing e Alignment",
+                explanation: "SPACING UTILITIES são classes mágicas para espaçamento! 'm' para margin, 'p' para padding, seguido de direção (t=top, b=bottom, l=left, r=right, x=horizontal, y=vertical) e tamanho (0-5). É controle total sobre espaços!",
+                solution: ['<div class="text-center mt-4 p-3">', '<h2>Texto Centralizado</h2>', '</div>'],
+                success: "🎯 Sensacional! Você dominou espaçamento e alinhamento!\n\nEssas utilities são usadas constantemente em projetos reais. Agora você pode ajustar qualquer espaçamento sem escrever CSS!",
+                commands: ['<div class="text-center mt-4 p-3">', '<h2>Texto Centralizado</h2>', '</div>', 'mb-2', 'px-5', 'text-end']
+            },
+    
+            // NÍVEL 9 - CORES DE FUNDO E TEXTO
+            {
+                story: "🌈 Fantástico! Vamos adicionar cores ao design.\n\nNono Desafio: Use o sistema de cores do Bootstrap! Aplique 'bg-primary' para fundo azul e 'text-white' para texto branco em um elemento.\n\nCores consistentes criam identidade visual!",
+                concept: "Sistema de Cores",
+                explanation: "SISTEMA DE CORES do Bootstrap oferece paleta consistente! bg-primary, bg-secondary, bg-success, bg-danger, bg-warning, bg-info, bg-light, bg-dark. Combine com text-white, text-dark para contraste perfeito!",
+                solution: ['<div class="bg-primary text-white p-3">', '<h3>Texto em Fundo Azul</h3>', '</div>'],
+                success: "🎨 Incrível! Você aplicou o sistema de cores!\n\nUsar cores consistentes deixa seu design profissional e harmonioso. Agora você tem uma paleta completa na ponta dos dedos!",
+                commands: ['<div class="bg-primary text-white p-3">', '<h3>Texto em Fundo Azul</h3>', '</div>', 'bg-success', 'text-danger', 'bg-warning']
+            },
+    
+            // NÍVEL 10 - FLEXBOX UTILITIES
+            {
+                story: "🏗️ Excelente! Vamos dominar flexbox com Bootstrap.\n\nDécimo Desafio: Use utilities de flexbox! Aplique 'd-flex justify-content-center align-items-center' para centralizar conteúdo tanto horizontal quanto verticalmente.\n\nFlexbox é poder de layout moderno!",
+                concept: "Flexbox Utilities",
+                explanation: "FLEXBOX UTILITIES trazem poder total de layout! 'd-flex' ativa flexbox, 'justify-content-center' centraliza horizontalmente, 'align-items-center' centraliza verticalmente. É como ter superpoderes de alinhamento!",
+                solution: ['<div class="d-flex justify-content-center align-items-center" style="height: 200px;">', '<h3>Centralizado!</h3>', '</div>'],
+                success: "⚡ Perfeito! Você dominou flexbox utilities!\n\nFlexbox é essencial no design moderno. Agora você pode criar layouts complexos e perfeitamente alinhados com facilidade!",
+                commands: ['<div class="d-flex justify-content-center align-items-center" style="height: 200px;">', '<h3>Centralizado!</h3>', '</div>', 'justify-content-between', 'flex-column', 'align-items-start']
+            },
+    
+            // NÍVEL 11 - BADGES E ALERTS
+            {
+                story: "⚠️ Incrível! Vamos criar elementos informativos.\n\nDécimo Primeiro Desafio: Crie um alerta e um badge! Use 'alert alert-success' para uma mensagem de sucesso e 'badge bg-primary' para um marcador.\n\nComunicação visual é fundamental!",
+                concept: "Badges e Alerts",
+                explanation: "BADGES são pequenos marcadores para destacar informações! ALERTS são avisos importantes que chamam atenção do usuário. Ambos vêm com cores semânticas para diferentes tipos de mensagem!",
+                solution: ['<div class="alert alert-success">Sucesso!</div>', '<span class="badge bg-primary">Novo</span>'],
+                success: "📢 Sensacional! Você criou elementos informativos perfeitos!\n\nBadges e alerts melhoram muito a comunicação com o usuário. Agora você pode destacar informações importantes de forma elegante!",
+                commands: ['<div class="alert alert-success">Sucesso!</div>', '<span class="badge bg-primary">Novo</span>', 'alert-danger', 'alert-warning', 'badge bg-secondary', 'alert-dismissible']
+            },
+    
+            // NÍVEL 12 - MODAL
+            {
+                story: "🎭 Fantástico! Vamos criar janelas modais.\n\nDécimo Segundo Desafio: Crie um modal básico! Use 'modal' como container, 'modal-dialog' para o diálogo e 'modal-content' para o conteúdo.\n\nModals criam experiências interativas incríveis!",
+                concept: "Modals",
+                explanation: "MODALS são janelas sobrepostas que focam a atenção do usuário! Perfeitos para confirmações, formulários ou exibir conteúdo detalhado. É como ter uma tela dentro da tela!",
+                solution: ['<div class="modal fade">', '<div class="modal-dialog">', '<div class="modal-content">', '<div class="modal-header">Modal Title</div>', '</div>', '</div>', '</div>'],
+                success: "🎪 Incrível! Você criou uma janela modal!\n\nModals são essenciais para interfaces modernas. Agora você pode criar experiências interativas que mantêm o usuário focado!",
+                commands: ['<div class="modal fade">', '<div class="modal-dialog">', '<div class="modal-content">', '<div class="modal-header">Modal Title</div>', '</div>', '</div>', '</div>']
+            },
+    
+            // NÍVEL 13 - BREADCRUMB E PAGINATION
+            {
+                story: "🗺️ Excelente! Vamos criar navegação secundária.\n\nDécimo Terceiro Desafio: Crie um breadcrumb para mostrar a localização atual! Use 'breadcrumb' como lista e 'breadcrumb-item' para cada item do caminho.\n\nNavegação clara orienta o usuário!",
+                concept: "Breadcrumb e Navegação",
+                explanation: "BREADCRUMB mostra onde o usuário está na hierarquia do site! É como migalhas de pão digitais que ajudam na navegação. Essencial para sites com muitas páginas!",
+                solution: ['<nav class="breadcrumb">', '<a class="breadcrumb-item" href="#">Home</a>', '<a class="breadcrumb-item" href="#">Produtos</a>', '<span class="breadcrumb-item active">Categoria</span>', '</nav>'],
+                success: "🧭 Perfeito! Você criou navegação secundária profissional!\n\nBreadcrumbs melhoram muito a experiência de navegação. Agora seus usuários sempre sabem onde estão!",
+                commands: ['<nav class="breadcrumb">', '<a class="breadcrumb-item" href="#">Home</a>', '<a class="breadcrumb-item" href="#">Produtos</a>', '<span class="breadcrumb-item active">Categoria</span>', '</nav>']
+            },
+    
+            // NÍVEL 14 - TABELAS RESPONSIVAS
+            {
+                story: "📊 Incrível! Vamos criar tabelas elegantes.\n\nDécimo Quarto Desafio: Crie uma tabela responsiva! Use 'table-responsive' como wrapper e 'table table-striped' para uma tabela com linhas alternadas.\n\nTabelas organizadas apresentam dados claramente!",
+                concept: "Tabelas Responsivas",
+                explanation: "TABELAS RESPONSIVAS se adaptam a telas pequenas com scroll horizontal! 'table-striped' alterna cores das linhas, 'table-hover' adiciona efeito hover. Dados organizados de forma profissional!",
+                solution: ['<div class="table-responsive">', '<table class="table table-striped">', '<thead><tr><th>Nome</th><th>Email</th></tr></thead>', '<tbody><tr><td>João</td><td>joao@email.com</td></tr></tbody>', '</table>', '</div>'],
+                success: "📈 Sensacional! Você criou uma tabela profissional!\n\nTabelas bem estilizadas fazem dados complexos ficarem claros e acessíveis. Essencial para dashboards e relatórios!",
+                commands: ['<div class="table-responsive">', '<table class="table table-striped">', '<thead><tr><th>Nome</th><th>Email</th></tr></thead>', '<tbody><tr><td>João</td><td>joao@email.com</td></tr></tbody>', '</table>', '</div>']
+            },
+    
+            // NÍVEL 15 - PROGRESS BARS
+            {
+                story: "📈 Fantástico! Vamos criar barras de progresso.\n\nDécimo Quinto Desafio: Crie uma barra de progresso animada! Use 'progress' como container e 'progress-bar' com largura definida por style.\n\nProgresso visual motiva usuários!",
+                concept: "Progress Bars",
+                explanation: "PROGRESS BARS mostram visualmente o andamento de processos! Podem ser animadas, ter cores diferentes e até múltiplas seções. É feedback visual essencial para o usuário!",
+                solution: ['<div class="progress">', '<div class="progress-bar bg-success" style="width: 75%">75%</div>', '</div>'],
+                success: "🎯 Incrível! Você criou feedback visual de progresso!\n\nBarras de progresso melhoram muito a experiência do usuário ao mostrar o andamento de tarefas. Essencial em formulários e uploads!",
+                commands: ['<div class="progress">', '<div class="progress-bar bg-success" style="width: 75%">75%</div>', '</div>', 'progress-bar-striped', 'progress-bar-animated', 'bg-warning']
+            },
+    
+            // NÍVEL 16 - CAROUSEL
+            {
+                story: "🎠 Excelente! Vamos criar um carrossel de imagens.\n\nDécimo Sexto Desafio: Crie um carousel básico! Use 'carousel slide' como container, 'carousel-inner' para os slides e 'carousel-item' para cada slide.\n\nCarousels criam apresentações dinâmicas!",
+                concept: "Carousel",
+                explanation: "CAROUSEL é um componente para apresentações de slides! Perfeito para galleries, depoimentos ou conteúdo em destaque. Pode ter controles de navegação e indicadores!",
+                solution: ['<div class="carousel slide">', '<div class="carousel-inner">', '<div class="carousel-item active">Slide 1</div>', '<div class="carousel-item">Slide 2</div>', '</div>', '</div>'],
+                success: "🎡 Perfeito! Você criou um carousel interativo!\n\nCarousels são ótimos para destacar conteúdo importante. Agora você pode criar apresentações visuais envolventes!",
+                commands: ['<div class="carousel slide">', '<div class="carousel-inner">', '<div class="carousel-item active">Slide 1</div>', '<div class="carousel-item">Slide 2</div>', '</div>', '</div>']
+            },
+    
+            // NÍVEL 17 - OFFCANVAS
+            {
+                story: "📱 Incrível! Vamos criar painéis laterais modernos.\n\nDécimo Sétimo Desafio: Crie um offcanvas (painel lateral)! Use 'offcanvas offcanvas-start' para um painel que desliza da esquerda.\n\nOffcanvas é perfeito para menus mobile!",
+                concept: "Offcanvas",
+                explanation: "OFFCANVAS são painéis que deslizam das bordas da tela! Ideais para menus de navegação em mobile, filtros ou conteúdo adicional. É como ter gavetas secretas na sua interface!",
+                solution: ['<div class="offcanvas offcanvas-start">', '<div class="offcanvas-header">Menu</div>', '<div class="offcanvas-body">Conteúdo do menu</div>', '</div>'],
+                success: "🚀 Sensacional! Você criou um painel lateral moderno!\n\nOffcanvas é essencial para interfaces mobile-first. Agora você pode criar navegação elegante que economiza espaço!",
+                commands: ['<div class="offcanvas offcanvas-start">', '<div class="offcanvas-header">Menu</div>', '<div class="offcanvas-body">Conteúdo do menu</div>', '</div>', 'offcanvas-end', 'offcanvas-top']
+            },
+    
+            // NÍVEL 18 - TOOLTIPS E POPOVERS
+            {
+                story: "💬 Fantástico! Vamos adicionar dicas interativas.\n\nDécimo Oitavo Desafio: Prepare elementos para tooltip e popover! Use atributos 'data-bs-toggle=\"tooltip\"' e 'title' para dicas rápidas.\n\nTooltips fornecem informações contextuais!",
+                concept: "Tooltips e Popovers",
+                explanation: "TOOLTIPS são dicas pequenas que aparecem no hover! POPOVERS são versões maiores com mais conteúdo. Ambos fornecem informações contextuais sem poluir a interface!",
+                solution: ['<button class="btn btn-primary" data-bs-toggle="tooltip" title="Esta é uma dica útil!">', 'Passe o mouse aqui', '</button>'],
+                success: "💡 Incrível! Você adicionou dicas interativas!\n\nTooltips e popovers melhoram a usabilidade fornecendo informações adicionais quando necessário. Interface limpa e informativa!",
+                commands: ['<button class="btn btn-primary" data-bs-toggle="tooltip" title="Esta é uma dica útil!">', 'Passe o mouse aqui', '</button>', 'data-bs-toggle="popover"', 'data-bs-content="Conteúdo detalhado"']
+            },
+    
+            // NÍVEL 19 - ACCORDION
+            {
+                story: "🎵 Excelente! Vamos criar painéis recolhíveis.\n\nDécimo Nono Desafio: Crie um accordion (sanfona)! Use 'accordion' como container, 'accordion-item' para cada seção e 'accordion-collapse' para o conteúdo recolhível.\n\nAccordions organizam muito conteúdo em pouco espaço!",
+                concept: "Accordion",
+                explanation: "ACCORDION é perfeito para FAQ, categorias ou qualquer conteúdo que precisa ser organizado de forma compacta! Usuários podem expandir apenas o que interessam!",
+                solution: ['<div class="accordion">', '<div class="accordion-item">', '<h2 class="accordion-header">', '<button class="accordion-button">Pergunta 1</button>', '</h2>', '<div class="accordion-collapse collapse show">', '<div class="accordion-body">Resposta aqui</div>', '</div>', '</div>', '</div>'],
+                success: "🎊 Perfeito! Você criou um accordion funcional!\n\nAccordions são essenciais para organizar grandes quantidades de informação. Agora você pode criar FAQs e seções organizadas profissionalmente!",
+                commands: ['<div class="accordion">', '<div class="accordion-item">', '<h2 class="accordion-header">', '<button class="accordion-button">Pergunta 1</button>', '</h2>', '<div class="accordion-collapse collapse show">', '<div class="accordion-body">Resposta aqui</div>', '</div>', '</div>', '</div>']
+            },
+    
+            // NÍVEL 20 - PROJETO FINAL COMPLETO
+            {
+                story: "🏆 DESAFIO FINAL ÉPICO!\n\nVocê chegou ao último nível! Crie uma landing page completa que integre tudo que aprendeu: navbar, hero section com container, grid de cards, formulário estilizado e footer.\n\nMostre que você é um mestre do Bootstrap!",
+                concept: "Landing Page Completa",
+                explanation: "PROJETO FINAL integra todos os componentes Bootstrap! Uma landing page profissional que demonstra domínio completo: layout responsivo, componentes interativos, tipografia e cores harmoniosas. É o teste definitivo!",
+                solution: ['<nav class="navbar navbar-expand-lg navbar-dark bg-primary">', '<div class="container">', '<a class="navbar-brand" href="#">MeuSite</a>', '</div>', '</nav>', '<section class="bg-light py-5">', '<div class="container">', '<div class="row">', '<div class="col-lg-6">', '<h1 class="display-4">Bem-vindo!</h1>', '<p class="lead">Uma landing page incrível</p>', '<button class="btn btn-primary btn-lg">Começar</button>', '</div>', '</div>', '</div>', '</section>', '<footer class="bg-dark text-white text-center py-4">', '<div class="container">', '<p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>', '</div>', '</footer>'],
+                success: "🎉🏆 PARABÉNS, MESTRE DO BOOTSTRAP! 🏆🎉\n\nVocê completou todos os 20 níveis e se tornou um verdadeiro especialista em Bootstrap! Dominou desde containers básicos até landing pages completas.\n\nAgora você pode criar:\n• Layouts responsivos profissionais\n• Componentes interativos elegantes\n• Interfaces mobile-first\n• Páginas completas rapidamente\n• Designs consistentes e acessíveis\n\nSeu conhecimento em Bootstrap é agora de nível EXPERT! Você pode criar qualquer interface que imaginar! 🚀✨💻",
+                commands: ['<nav class="navbar navbar-expand-lg navbar-dark bg-primary">', '<div class="container">', '<a class="navbar-brand" href="#">MeuSite</a>', '</div>', '</nav>', '<section class="bg-light py-5">', '<div class="row">', '<div class="col-lg-6">', '<h1 class="display-4">Bem-vindo!</h1>', '<p class="lead">Uma landing page incrível</p>', '<button class="btn btn-primary btn-lg">Começar</button>', '</div>', '</section>', '<footer class="bg-dark text-white text-center py-4">', '<p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>', '</footer>']
+            }
+        ]
     }
 };
 
@@ -725,6 +1119,22 @@ function runCode() {
             character.style.background = '#FF6B6B';
             character.classList.remove('moving');
         }, 1500);
+    } else if (selectedTrack === 'react') {
+        // Animação especial para React
+        character.classList.add('react-animation');
+        character.style.background = 'linear-gradient(45deg, #61dafb, #21d4fd)';
+        setTimeout(() => {
+            character.style.background = '#FF6B6B';
+            character.classList.remove('moving', 'react-animation');
+        }, 1500);
+    } else if (selectedTrack === 'bootstrap') {
+        // Animação especial para Bootstrap
+        character.classList.add('bootstrap-animation');
+        character.style.background = 'linear-gradient(45deg, #7952b3, #563d7c)';
+        setTimeout(() => {
+            character.style.background = '#FF6B6B';
+            character.classList.remove('moving', 'bootstrap-animation');
+        }, 1500);
     } else {
         setTimeout(() => character.classList.remove('moving'), 1000);
     }
@@ -764,6 +1174,10 @@ function getTrackSpecificHint(solution) {
         return `Você precisa usar: ${solution.join(' → ')}. Lembre-se da sintaxe do JavaScript!`;
     } else if (selectedTrack === 'css') {
         return `Você precisa usar: ${solution.join(' ')}. Não esqueça das chaves e ponto-e-vírgula!`;
+    } else if (selectedTrack === 'react') {
+        return `Você precisa usar: ${solution.join(' → ')}. Lembre-se da sintaxe JSX e dos hooks!`;
+    } else if (selectedTrack === 'bootstrap') {
+        return `Você precisa usar: ${solution.join(' ')}. Atenção às classes CSS do Bootstrap!`;
     } else {
         return `Você precisa usar: ${solution.join(' → ')}`;
     }
