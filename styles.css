@@ -96,7 +96,7 @@ body {
 
 .track-card.javascript {
     border-color: #f1c40f;
-    background: linear-gradient(135deg, #fff9c4, #f8f9fa);
+    background: transparent;
 }
 
 .track-card.javascript:hover {
@@ -106,7 +106,7 @@ body {
 
 .track-card.logic {
     border-color: #9b59b6;
-    background: linear-gradient(135deg, #f4e6ff, #f8f9fa);
+    background: transparent;
 }
 
 .track-card.logic:hover {
@@ -116,7 +116,7 @@ body {
 
 .track-card.css {
     border-color: #e74c3c;
-    background: linear-gradient(135deg, #ffe6e6, #f8f9fa);
+    background: transparent;
 }
 
 .track-card.css:hover {
@@ -133,11 +133,11 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: #fff;
 }
 
 .track-description {
-    color: #7f8c8d;
+    color: #f4f4f4;
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -171,7 +171,7 @@ body {
     background: #f8f9fa;
     border-radius: 15px;
     padding: 25px;
-    border-left: 5px solid #4CAF50;
+    border-left: 5px solid #6B00E4;
 }
 
 .code-panel {
@@ -338,7 +338,7 @@ body {
 }
 
 .run-btn {
-    background: linear-gradient(45deg, #FF6B6B, #ee5a24);
+    background: linear-gradient(45deg, #6B00E4, #290058);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -355,7 +355,7 @@ body {
 
 .run-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3);
 }
 
 .run-btn:disabled {
