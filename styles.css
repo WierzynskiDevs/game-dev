@@ -12,13 +12,16 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .game-container {
     background: rgba(0, 0, 0, 0.407);
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
     border: 1px solid #6B00E4;
     overflow: hidden;
@@ -34,7 +37,7 @@ body {
 }
 
 .game-header h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
@@ -54,9 +57,9 @@ body {
 }
 
 .selection-title {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 
@@ -70,7 +73,7 @@ body {
 .track-card {
     background: linear-gradient(135deg, #fff, #f8f9fa);
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 10px 20px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     border: 3px solid transparent;
@@ -105,13 +108,13 @@ body {
 }
 
 .track-card.logic {
-    border-color: #9b59b6;
+    border-color: #45bb00;
     background: transparent;
 }
 
 .track-card.logic:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(155, 89, 182, 0.3);
+    box-shadow: 0 15px 30px rgba(4, 132, 0, 0.3);
 }
 
 .track-card.css {
@@ -446,24 +449,24 @@ body {
 }
 
 .track-card.react {
-    border-color: #61dafb;
-    background: linear-gradient(135deg, #e6f7ff, #f8f9fa);
+    border-color: #9b59b6;
+    background: transparent;
 }
 
 .track-card.react:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(97, 218, 251, 0.3);
+    box-shadow: 0 15px 30px rgba(155, 89, 182, 0.3);
 }
 
 /* Estilo para trilha Bootstrap */
 .track-card.bootstrap {
-    border-color: #7952b3;
-    background: linear-gradient(135deg, #f3e8ff, #f8f9fa);
+    border-color: #61dafb;
+    background: transparent;
 }
 
 .track-card.bootstrap:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(121, 82, 179, 0.3);
+    box-shadow: 0 15px 30px rgba(97, 218, 251, 0.3);
 }
 
 /* Atualizar o grid para acomodar 5 trilhas */
@@ -514,7 +517,7 @@ body {
     .track-card {
         padding: 25px 15px;
     }
-    
+
     .game-content {
         flex-direction: column;
         gap: 20px;
