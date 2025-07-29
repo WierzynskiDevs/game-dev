@@ -5,10 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aventura do Código</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
-    <link rel="icon" href="images/favicon.ong" type="image/x-icon">
-    <script src="script.js" defer></script>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!-- LOADER -->
+    <div class="loader-container" id="loader">
+        <div class="loader-title">🎮 Aventura do Código</div>
+        <div class="loader-subtitle">Preparando sua jornada de programação...</div>
+        
+        <div class="code-animation">
+            <div class="code-line">console.log('Iniciando sistema...');</div>
+            <div class="code-line">loadGameAssets();</div>
+            <div class="code-line">initializePlayer();</div>
+            <div class="code-line">startAdventure() // ✅ Pronto!</div>
+        </div>
+        
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        
+        <div class="loading-text">Carregando...</div>
+        
+        <div class="programming-icons">
+            <div class="icon">
+                <img src="images/logos/js.png" alt="JavaScript Icon">
+            </div>
+            <div class="icon">
+                <img src="images/logos/css.png" alt="CSS Icon">
+            </div>
+            <div class="icon">
+                <img src="images/logos/react.png" alt="Reat.JS Icon">
+            </div>
+            <div class="icon">
+                💡
+            </div>
+        </div>
+    </div>
     <div class="game-container">
         <!-- TELA DE SELEÇÃO -->
         <div id="selectionScreen">
@@ -40,7 +72,7 @@
 
                     <div class="track-card logic" onclick="selectTrack('logic')">
                         <div class="track-icon">
-                            <img src="images/logos/logic.png" alt="Lógica Icon">
+                            💡
                         </div>
                         <div class="track-title">Lógica de Programação</div>
                         <div class="track-description">

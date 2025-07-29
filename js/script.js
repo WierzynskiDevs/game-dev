@@ -1,9 +1,90 @@
+// Animação dinâmica do texto "Carregando..."
+function animateLoadingText() {
+    const loadingText = document.querySelector('.loading-text');
+    if (!loadingText) return;
+    
+    const states = ['Carregando', 'Carregando.', 'Carregando..', 'Carregando...'];
+    let currentState = 0;
+    
+    const interval = setInterval(() => {
+        loadingText.textContent = states[currentState];
+        currentState = (currentState + 1) % states.length;
+    }, 500);
+    
+    // Parar animação após 4.5 segundos
+    setTimeout(() => {
+        clearInterval(interval);
+    }, 4500);
+}
+
+// Carregamento do jogo
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado, iniciando loader...');
+    
+    const loader = document.getElementById('loader');
+    const gameContainer = document.querySelector('.game-container');
+    
+    // Verificar se os elementos existem
+    if (!loader || !gameContainer) {
+        console.error('Elementos não encontrados:', { loader, gameContainer });
+        return;
+    }
+    
+    // Iniciar animação do texto de carregamento
+    animateLoadingText();
+    
+    // Aguardar as animações do loader terminarem
+    setTimeout(function() {
+        console.log('Iniciando transição...');
+        
+        // Esconder o loader
+        loader.classList.add('hidden');
+        console.log('Classe hidden adicionada ao loader');
+        
+        // Mostrar o container do jogo após o loader começar a desaparecer
+        setTimeout(function() {
+            gameContainer.classList.add('show');
+            console.log('Classe show adicionada ao game container');
+            
+            // Inicializar o jogo após mostrar o container
+            initializeGame();
+        }, 500);
+        
+    }, 4500);
+});
+
+// ===== GAME FUNCTIONALITY =====
+
 let currentLevel = 1;
 let userCommands = [];
 let selectedTrack = '';
 let currentTrackData = {};
 
+// Inicializar o jogo (chamado após o loader)
+function initializeGame() {
+    console.log('Inicializando jogo...');
+    
+    // Garantir que a tela de seleção está visível
+    const selectionScreen = document.getElementById('selectionScreen');
+    const gameScreen = document.getElementById('gameScreen');
+    
+    if (selectionScreen && gameScreen) {
+        selectionScreen.classList.remove('hidden');
+        gameScreen.classList.add('hidden');
+        console.log('Telas de jogo inicializadas');
+    }
+}
+
 function selectTrack(trackName) {
+    console.log(`Trilha selecionada: ${trackName}`);
+    
+    // Verificar se o objeto tracks existe (do seu arquivo tracks.js)
+    if (typeof tracks === 'undefined') {
+        console.error('Objeto tracks não encontrado. Certifique-se de que tracks.js está carregado.');
+        alert('Erro: Dados das trilhas não carregados. Recarregue a página.');
+        return;
+    }
+    
     selectedTrack = trackName;
     currentTrackData = tracks[trackName];
     currentLevel = 1;
@@ -202,7 +283,3 @@ function loadLevel() {
     // Limpar o código quando carregar novo nível
     clearCode();
 }
-
-// Inicializar mostrando a tela de seleção
-document.getElementById('selectionScreen').classList.remove('hidden');
-document.getElementById('gameScreen').classList.add('hidden');
