@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aventura do Código</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.ong" type="image/x-icon">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -21,7 +22,9 @@
                 
                 <div class="tracks-container">
                     <div class="track-card javascript" onclick="selectTrack('javascript')">
-                        <div class="track-icon">🟨</div>
+                        <div class="track-icon">
+                            <img src="images/logos/js.png" alt="JavaScript Icon">
+                        </div>
                         <div class="track-title">JavaScript</div>
                         <div class="track-description">
                             Aprenda a linguagem que domina a web! Desde variáveis até manipulação de elementos da página.
@@ -36,7 +39,9 @@
                     </div>
 
                     <div class="track-card logic" onclick="selectTrack('logic')">
-                        <div class="track-icon">🧠</div>
+                        <div class="track-icon">
+                            <img src="images/logos/logic.png" alt="Lógica Icon">
+                        </div>
                         <div class="track-title">Lógica de Programação</div>
                         <div class="track-description">
                             Desenvolva o pensamento computacional! Algoritmos, estruturas de decisão e resolução de problemas.
@@ -51,7 +56,9 @@
                     </div>
 
                     <div class="track-card css" onclick="selectTrack('css')">
-                        <div class="track-icon">🎨</div>
+                        <div class="track-icon">
+                            <img src="images/logos/css.png" alt="CSS Icon">
+                        </div>
                         <div class="track-title">CSS & Design</div>
                         <div class="track-description">
                             Domine a arte do design web! Layouts, animações, responsividade e experiência visual.
@@ -66,7 +73,9 @@
                     </div>
 
                     <div class="track-card react" onclick="selectTrack('react')">
-                        <div class="track-icon">⚛️</div>
+                        <div class="track-icon">
+                            <img src="images/logos/react.png" alt="Reat.JS Icon">
+                        </div>
                         <div class="track-title">React.js</div>
                         <div class="track-description">
                             Domine a biblioteca mais popular para criar interfaces! Componentes, hooks e estado reativo.
@@ -79,31 +88,15 @@
                             <span class="concept-tag">Props</span>
                         </div>
                     </div>
-                    
-                    <div class="track-card bootstrap" onclick="selectTrack('bootstrap')">
-                        <div class="track-icon">🅱️</div>
-                        <div class="track-title">Bootstrap</div>
-                        <div class="track-description">
-                            Crie layouts profissionais rapidamente! Grid system, componentes e design responsivo.
-                        </div>
-                        <div class="track-concepts">
-                            <span class="concept-tag">Grid System</span>
-                            <span class="concept-tag">Componentes</span>
-                            <span class="concept-tag">Responsivo</span>
-                            <span class="concept-tag">Utilities</span>
-                            <span class="concept-tag">Flexbox</span>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
 
         <!-- TELA DE JOGO -->
         <div id="gameScreen" class="hidden">
-            <button class="back-btn" onclick="backToSelection()">← Voltar</button>
-            
+           
             <div class="game-header">
+                <button class="back-btn" onclick="backToSelection()">← Voltar</button>
                 <h1 id="gameTitle">🎮 Aventura do Código</h1>
                 <div class="level-indicator">
                     <span id="trackName">Trilha</span> - Nível <span id="currentLevel">1</span> - Conceito: <span id="currentConcept">Conceito</span>
@@ -148,7 +141,17 @@
                 </div>
             </div>
         </div>
-    </div>
+
+        <footer>
+            <div class="developer-info">
+                Desenvolvido por: <br>
+                <a href="#">
+                    <img class="logo-footer" src="images/logos/wdevtech.svg">
+                </a>
+            </div>
+            
+        </footer>
+    </div>g
     <script src="script.js" defer></script>
 </body>
 
